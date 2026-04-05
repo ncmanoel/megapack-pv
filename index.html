@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MegaPack Criativo — +15.000 Figurinhas para Stories que Param o Scroll</title>
+<meta name="description" content="O maior pack de figurinhas do Brasil. +15.000 figurinhas organizadas por tema para transformar seus Stories em conteúdo que engaja e vende.">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1438112951198337');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1438112951198337&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- Meta Tracking V4 -->
+<script src="capi_tracker.js"></script>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================
+   RESET & SYSTEM
+============================================ */
+:root {
+  --pink: #e8417c;
+  --pink-glow: rgba(232, 65, 124, 0.4);
+  --pink-light: #ff6fa0;
+  --gold: #f5c842;
+  --cream: #f0ece4;
+  --dark: #0d0d0d;
+  --dark2: #161616;
+  --dark3: #1e1e1e;
+  --muted: #8a8580;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --serif: 'Playfair Display', serif;
+  --sans: 'DM Sans', sans-serif;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--dark);
+  color: var(--cream);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 80px 0; }
+.text-center { text-align: center; }
+
+/* ============================================
+   ANIMATIONS
+============================================ */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0%, 100% { box-shadow: 0 0 0 rgba(232, 65, 124, 0); } 50% { box-shadow: 0 0 30px var(--pink-glow); } }
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+
+.reveal { animation: fadeUp .8s var(--ease) forwards; opacity: 0; }
+
+/* ============================================
+   TYPOGRAPHY
+============================================ */
+.display { font-family: var(--serif); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; }
+.display-italic { font-style: italic; font-weight: 400; color: var(--pink-light); }
+h1 { font-size: clamp(2.4rem, 8vw, 3.8rem); margin-bottom: 24px; }
+h2 { font-size: clamp(1.8rem, 6vw, 2.6rem); margin-bottom: 20px; }
+p { font-size: 1.1rem; color: #b5b0a8; }
+
+/* ============================================
+   BADGES & UI
+============================================ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(232, 65, 124, 0.1);
+  border: 1px solid rgba(232, 65, 124, 0.2);
+  color: var(--pink-light);
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 8px 16px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 440px;
+  padding: 22px 32px;
+  border-radius: var(--radius-lg);
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all .2s var(--ease);
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--pink), var(--pink-light));
+  color: white;
+  border: none;
+  animation: pulse 3s infinite;
+  box-shadow: 0 10px 40px rgba(232, 65, 124, 0.3);
+}
+.btn-primary:active { transform: scale(0.97); }
+.btn-outline {
+  background: transparent;
+  border: 1px solid #333;
+  color: var(--cream);
+  margin-top: 12px;
+}
+.btn-outline:hover { border-color: var(--pink); }
+
+/* ============================================
+   SECTIONS
+============================================ */
+.topbar { background: var(--pink); padding: 10px; text-align: center; font-size: 12px; font-weight: 700; }
+
+.hero { padding: 100px 0 60px; min-height: 80svh; display: flex; align-items: center; }
+.hero-subtitle { margin-bottom: 40px; line-height: 1.8; }
+
+.price-card {
+  background: var(--dark2);
+  border: 1px solid #222;
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  margin: 40px auto;
+  max-width: 400px;
+  position: relative;
+  overflow: hidden;
+}
+.price-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--pink), transparent);
+}
+.price-label { font-size: 14px; color: var(--muted); margin-bottom: 8px; }
+.price-value { font-size: 64px; font-family: var(--serif); color: var(--cream); line-height: 1; }
+.price-value sup { font-size: 24px; vertical-align: top; margin-top: 10px; display: inline-block; }
+
+.themes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 40px; }
+.theme-item {
+  background: var(--dark3); border: 1px solid #222; padding: 16px; border-radius: 8px;
+  display: flex; align-items: center; gap: 10px; font-size: 14px;
+}
+.theme-dot { width: 8px; height: 8px; background: var(--pink); border-radius: 50%; opacity: 0.6; }
+
+.bonus-area { background: #080808; border-top: 1px solid #111; }
+.bonus-item {
+  background: var(--dark2); border: 1px solid #222; padding: 24px; border-radius: var(--radius);
+  margin-bottom: 16px; display: flex; gap: 20px; align-items: center;
+}
+.bonus-icon { font-size: 32px; }
+
+.footer { padding: 60px 0; border-top: 1px solid #111; color: var(--muted); font-size: 13px; }
+
+.sticky-cta {
+  position: fixed; bottom: 0; left: 0; right: 0; padding: 16px 24px; 
+  background: rgba(13, 13, 13, 0.9); backdrop-filter: blur(10px);
+  border-top: 1px solid #222; z-index: 100;
+  display: flex; gap: 12px; align-items: center;
+  transform: translateY(100%); transition: transform 0.4s var(--ease);
+}
+.sticky-cta.show { transform: translateY(0); }
+.sticky-info { flex: 1; }
+.sticky-price { font-weight: 700; color: white; display: block; }
+.sticky-name { font-size: 11px; color: var(--muted); }
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+  .themes-grid { grid-template-columns: repeat(3, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">🔥 ATUALIZADO 15/03/2026 — PRÓXIMA ATUALIZAÇÃO EM BREVE</div>
+
+<section class="hero reveal">
+  <div class="container text-center">
+    <div class="badge">🔥 +15.000 Figurinhas Criativas</div>
+    <h1 class="display">Stories que <span class="display-italic">param o scroll</span> e geram venda</h1>
+    <p class="hero-subtitle">Transforme seus stories comuns em conteúdo profissional e altamente lucrativo em segundos. O maior e mais completo pack do Brasil.</p>
+    
+    <div class="price-card">
+      <div class="price-label">Pack Básico por apenas</div>
+      <div class="price-value"><sup>R$</sup>5<span style="font-size:0.5em">,99</span></div>
+      <p style="font-size: 12px; margin-top: 12px; color: var(--pink-light)">⚡ Acesso imediato via Google Drive</p>
+    </div>
+
+    <div class="cta-stack">
+      <a href="upgrade.html" class="btn btn-primary" id="cta-basico">Quero o MegaPack agora →</a>
+      <a href="https://pay.celetus.com/NL9KO4PG" class="btn btn-outline" id="cta-premium">Quero a experiência Premium Completa (R$ 15,99)</a>
+    </div>
+  </div>
+</section>
+
+<section class="section reveal" style="background: var(--dark2);">
+  <div class="container">
+    <h2 class="display text-center">Para todos os nichos</h2>
+    <div class="themes-grid">
+      <div class="theme-item"><span class="theme-dot"></span> Academia</div>
+      <div class="theme-item"><span class="theme-dot"></span> Estética</div>
+      <div class="theme-item"><span class="theme-dot"></span> Mkt Digital</div>
+      <div class="theme-item"><span class="theme-dot"></span> Vendas</div>
+      <div class="theme-item"><span class="theme-dot"></span> Frases</div>
+      <div class="theme-item"><span class="theme-dot"></span> Gourmet</div>
+      <div class="theme-item"><span class="theme-dot"></span> Emojis 3D</div>
+      <div class="theme-item"><span class="theme-dot"></span> Lifestyle</div>
+      <div class="theme-item"><span class="theme-dot"></span> +80 temas</div>
+    </div>
+  </div>
+</section>
+
+<section class="section bonus-area reveal">
+  <div class="container">
+    <h2 class="display text-center">O que você recebe</h2>
+    <div class="bonus-item">
+      <div class="bonus-icon">💎</div>
+      <div>
+        <strong style="display:block; margin-bottom:4px;">Acesso Vitalício (no Premium)</strong>
+        <p style="font-size: 14px;">Pague uma vez e tenha acesso para sempre a todas as atualizações.</p>
+      </div>
+    </div>
+    <div class="bonus-item">
+      <div class="bonus-icon">⚡</div>
+      <div>
+        <strong style="display:block; margin-bottom:4px;">Passo a passo em vídeo</strong>
+        <p style="font-size: 14px;">Aprenda a aplicar as figurinhas no iPhone ou Android em 2 minutos.</p>
+      </div>
+    </div>
+    <div class="bonus-item">
+      <div class="bonus-icon">🎁</div>
+      <div>
+        <strong style="display:block; margin-bottom:4px;">Bônus Exclusivos</strong>
+        <p style="font-size: 14px;">Sombras, molduras e emojis 3D para elevar o nível do seu design.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer text-center">
+  <div class="container">
+    <p>MegaPack Criativo © 2026 · Todos os direitos reservados</p>
+    <p style="margin-top:8px;">Acesso imediato via Google Drive. Praticidade absoluta.</p>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="sticky">
+  <div class="sticky-info">
+    <span class="sticky-price">R$ 15,99</span>
+    <span class="sticky-name">Pack Premium Vitalício</span>
+  </div>
+  <a href="https://pay.celetus.com/NL9KO4PG" class="btn btn-primary" style="padding: 12px 20px; font-size: 14px; max-width: 160px;">Comprar Agora</a>
+</div>
+
+<script>
+// Tracking click InitiateCheckout
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('a');
+  if (btn && btn.href.includes('pay.celetus.com')) {
+    // Se for direto para o checkout, traqueamos InitiateCheckout
+    const plan = btn.href.includes('NL9KO4PG') ? 'Premium' : 'Basico';
+    if (window.fbq) window.fbq('track', 'InitiateCheckout', { content_name: 'MegaPack ' + plan });
+  } else if (btn && btn.href.includes('upgrade.html')) {
+    // Se for para o upgrade, traqueamos como InitiateCheckout inicial
+    if (window.fbq) window.fbq('track', 'InitiateCheckout', { content_name: 'MegaPack Início Fluxo' });
+  }
+});
+
+// Revelar elementos ao rolar
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.style.opacity = 1;
+  });
+}, { threshold: 0.1 });
+reveals.forEach(r => observer.observe(r));
+
+// Sticky Bar
+const sticky = document.getElementById('sticky');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) sticky.classList.add('show');
+  else sticky.classList.remove('show');
+});
+</script>
+
+</body>
+</html>
