@@ -6,27 +6,6 @@
 <title>MegaPack Criativo — +15.000 Figurinhas para Stories que Param o Scroll</title>
 <meta name="description" content="O maior pack de figurinhas do Brasil. +15.000 figurinhas organizadas por tema para transformar seus Stories em conteúdo que engaja e vende.">
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1438112951198337');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1438112951198337&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-
-<!-- Meta Tracking V4 -->
-<script src="capi_tracker.js"></script>
-
 <!-- Google Fonts: Playfair Display + DM Sans -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -840,16 +819,43 @@ p  { font-size: clamp(0.95rem, 2.5vw, 1.05rem); }
   .themes-grid { grid-template-columns: repeat(2, 1fr); }
   .sticky-bar { padding: 10px 16px; }
 }
-</style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1438112951198337');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1438112951198337&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- Meta Tracking V4 (Relay para Supabase) -->
+<script src="capi_tracker.js"></script>
+
 </head>
 
 <body>
 
+<!-- ============================================
+  TOP BAR: urgência / atualização
+============================================ -->
 <div class="topbar">
   🔥 Figurinhas atualizadas em 15/03/2026 — <span>próxima atualização em 15/04/2026</span>
 </div>
 
 
+<!-- ============================================
+  HERO
+============================================ -->
 <section class="hero">
   <div class="container text-center">
 
@@ -867,6 +873,9 @@ p  { font-size: clamp(0.95rem, 2.5vw, 1.05rem); }
       atualizados regularmente, prontos para usar em segundos.
     </p>
 
+    <!-- NOTA PARA DESENVOLVEDOR: inserir aqui gif/vídeo curto
+         mostrando figurinhas sendo usadas em stories reais.
+         Placeholder abaixo. -->
     <div style="background:var(--dark3);border:1px solid #2a2a2a;border-radius:16px;height:200px;display:flex;align-items:center;justify-content:center;margin:0 auto 28px;max-width:420px;">
       <div style="text-align:center;color:var(--muted);">
         <div style="font-size:32px;margin-bottom:8px;">▶</div>
@@ -903,6 +912,11 @@ p  { font-size: clamp(0.95rem, 2.5vw, 1.05rem); }
 </section>
 
 
+<!-- ============================================
+  SOCIAL PROOF BAR
+  NOTA: substituir os números pelos reais conforme crescer.
+  Começar com números conservadores e reais.
+============================================ -->
 <div class="social-bar">
   <div class="social-bar-inner">
     <div class="social-bar-stat">
@@ -923,6 +937,9 @@ p  { font-size: clamp(0.95rem, 2.5vw, 1.05rem); }
 </div>
 
 
+<!-- ============================================
+  PROBLEMA → SOLUÇÃO
+============================================ -->
 <section class="section problem-block">
   <div class="container">
 
@@ -952,6 +969,9 @@ p  { font-size: clamp(0.95rem, 2.5vw, 1.05rem); }
 </section>
 
 
+<!-- ============================================
+  TEMAS DISPONÍVEIS
+============================================ -->
 <section class="section themes-section">
   <div class="container">
 
@@ -987,6 +1007,9 @@ p  { font-size: clamp(0.95rem, 2.5vw, 1.05rem); }
 </section>
 
 
+<!-- ============================================
+  COMO FUNCIONA
+============================================ -->
 <section class="section how-section">
   <div class="container">
 
@@ -1020,6 +1043,9 @@ p  { font-size: clamp(0.95rem, 2.5vw, 1.05rem); }
 </section>
 
 
+<!-- ============================================
+  STACK DE BÔNUS (só Pack Premium)
+============================================ -->
 <section class="section bonus-section" id="bonus">
   <div class="container">
 
@@ -1107,6 +1133,13 @@ p  { font-size: clamp(0.95rem, 2.5vw, 1.05rem); }
 </section>
 
 
+<!-- ============================================
+  DEPOIMENTOS
+  NOTA PARA DESENVOLVEDOR: estes são placeholders
+  para depoimentos reais. Substituir por screenshots
+  reais de WhatsApp/DM do Instagram assim que coletados.
+  Manter a mesma estrutura de card.
+============================================ -->
 <section class="section testimonials-section">
   <div class="container">
 
@@ -1117,6 +1150,7 @@ p  { font-size: clamp(0.95rem, 2.5vw, 1.05rem); }
 
     <div class="testimonials-grid">
 
+      <!-- PLACEHOLDER — substituir por screenshot real -->
       <div class="testimonial-card">
         <div class="testimonial-stars">★★★★★</div>
         <p class="testimonial-text">
@@ -1132,6 +1166,7 @@ p  { font-size: clamp(0.95rem, 2.5vw, 1.05rem); }
         </div>
       </div>
 
+      <!-- PLACEHOLDER — substituir por screenshot real -->
       <div class="testimonial-card">
         <div class="testimonial-stars">★★★★★</div>
         <p class="testimonial-text">
@@ -1147,6 +1182,7 @@ p  { font-size: clamp(0.95rem, 2.5vw, 1.05rem); }
         </div>
       </div>
 
+      <!-- PLACEHOLDER — substituir por screenshot real -->
       <div class="testimonial-card">
         <div class="testimonial-stars">★★★★★</div>
         <p class="testimonial-text">
@@ -1168,6 +1204,9 @@ p  { font-size: clamp(0.95rem, 2.5vw, 1.05rem); }
 </section>
 
 
+<!-- ============================================
+  PRICING
+============================================ -->
 <section class="section pricing-section" id="pricing">
   <div class="container">
 
@@ -1240,6 +1279,9 @@ p  { font-size: clamp(0.95rem, 2.5vw, 1.05rem); }
 </section>
 
 
+<!-- ============================================
+  FAQ
+============================================ -->
 <section class="section faq-section">
   <div class="container">
 
@@ -1333,6 +1375,9 @@ p  { font-size: clamp(0.95rem, 2.5vw, 1.05rem); }
 </section>
 
 
+<!-- ============================================
+  FINAL CTA
+============================================ -->
 <section class="final-cta">
   <div class="container">
     <h2 class="display" style="margin-bottom:12px;">
@@ -1354,6 +1399,9 @@ p  { font-size: clamp(0.95rem, 2.5vw, 1.05rem); }
 </section>
 
 
+<!-- ============================================
+  FOOTER
+============================================ -->
 <footer class="footer">
   <div class="container">
     <div class="footer-links">
@@ -1369,6 +1417,9 @@ p  { font-size: clamp(0.95rem, 2.5vw, 1.05rem); }
 </footer>
 
 
+<!-- ============================================
+  STICKY BOTTOM BAR
+============================================ -->
 <div class="sticky-bar" id="stickyBar">
   <div class="sticky-bar-text">
     <div class="label">Pack Premium · Acesso vitalício</div>
@@ -1378,6 +1429,9 @@ p  { font-size: clamp(0.95rem, 2.5vw, 1.05rem); }
 </div>
 
 
+<!-- ============================================
+  SCRIPTS
+============================================ -->
 <script>
 // FAQ accordion
 function toggleFaq(btn) {
