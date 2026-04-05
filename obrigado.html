@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Obrigado! — MegaPack Criativo 🔥</title>
 
+<!-- Meta Tracking V4 (Engine) -->
+<script src="capi_tracker.js"></script>
+
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -16,18 +19,13 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1438112951198337');
-fbq('track', 'PageView');
-// O evento Purchase real será disparado via CAPI pelo servidor se disponível, 
-// ou aqui no browser como redundância.
-fbq('track', 'Purchase', { value: 15.99, currency: 'BRL' }); 
+// Compra disparada de forma dinâmica pelo motor de blindagem (CAPI + Pixel)
+const lastValue = localStorage.getItem('megapack_last_value') || 15.99;
+const lastContent = localStorage.getItem('megapack_last_content') || 'MegaPack';
+if (window.MegaTracker) {
+  window.MegaTracker.track('Purchase', { value: Number(lastValue), currency: 'BRL', content_name: lastContent });
+}
 </script>
-<noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1438112951198337&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-
-<!-- Meta Tracking V4 -->
-<script src="capi_tracker.js"></script>
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">

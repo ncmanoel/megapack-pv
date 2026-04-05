@@ -1,26 +1,28 @@
 /**
- * MegaPack CAPI Tracker V4
+ * MegaPack CAPI Tracker V4.2 — Edição Especial Sênior
  * Gerencia a deduplicação de eventos (Browserside Pixel + Server-side CAPI)
+ * Correção de Funil: Diferencia cliques de navegação (5,99) de Inícios de Checkout Reais.
  */
 
 (function() {
   const CONFIG = {
     PIXEL_ID: '1438112951198337',
-    SUPABASE_URL: 'https://ckwvvqqndafajlahngsh.supabase.co', // URL correta do projeto MegaPack
-    TRACKER_FUNCTION: 'megapack-tracker'
+    SUPABASE_URL: 'https://ckwvvqqndafajlahngsh.supabase.co',
+    TRACKER_FUNCTION: 'megapack-tracker',
+    ANON_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNrd3Z2cXFuZGFmYWpsYWhuZ3NoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU0MTcwNTMsImV4cCI6MjA5MDk5MzA1M30._CJOk6cWtJkwg7-sUbhuqB4FXWhzqtDe8rlo7_mZxTY'
   };
 
   function getCookie(name) {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
     if (parts.length === 2) return parts.pop().split(';').shift();
+    return null;
   }
 
   function generateEventId() {
     return 'ev_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
   }
 
-  // Recupera ou cria um event_id persistente para a sessão
   let eventId = localStorage.getItem('megapack_event_id');
   if (!eventId) {
     eventId = generateEventId();
@@ -31,9 +33,15 @@
     eventId: eventId,
     
     track: async function(eventName, customData = {}) {
-      console.log(`[MegaTracker] Tracking: ${eventName}`, customData);
+      console.log(`[MegaTracker] Rastreando: ${eventName}`, customData);
 
-      // 1. Disparo via Pixel (Browser)
+      // Persiste o valor para recuperação na página de obrigado
+      if (customData.value && eventName === 'InitiateCheckout') {
+        localStorage.setItem('megapack_last_value', customData.value);
+        localStorage.setItem('megapack_last_content', customData.content_name || '');
+      }
+
+      // 1. Pixel (Client)
       if (window.fbq) {
         window.fbq('track', eventName, {
           ...customData,
@@ -41,21 +49,20 @@
         });
       }
 
-      // 2. Disparo via CAPI (Server Relay)
+      // 2. CAPI (Server Relay)
       try {
         const payload = {
           event_name: eventName,
           event_id: this.eventId,
           event_time: Math.floor(Date.now() / 1000),
           user_data: {
-            client_ip_address: null, // O servidor pegará o IP
             client_user_agent: navigator.userAgent,
             fbp: getCookie('_fbp'),
             fbc: getCookie('_fbc')
           },
           custom_data: {
             currency: 'BRL',
-            value: customData.value || 0,
+            value: Number(customData.value) || 0,
             ...customData
           },
           source_url: window.location.href
@@ -63,39 +70,56 @@
 
         fetch(`${CONFIG.SUPABASE_URL}/functions/v1/${CONFIG.TRACKER_FUNCTION}`, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-          mode: 'no-cors' // Para não travar a UI se a função demorar
-        });
+          headers: { 
+            'Content-Type': 'application/json',
+            'apikey': CONFIG.ANON_KEY,
+            'Authorization': `Bearer ${CONFIG.ANON_KEY.trim()}`
+          },
+          body: JSON.stringify(payload)
+        }).catch(err => console.warn('[MegaTracker] CAPI Relay Offline', err));
+
       } catch (e) {
         console.error('[MegaTracker] CAPI Error:', e);
       }
     }
   };
 
-  // Auto-track PageView se o Pixel ainda não disparou
-  if (document.readyState === 'complete') {
-    window.MegaTracker.track('PageView');
-  } else {
-    window.addEventListener('load', () => window.MegaTracker.track('PageView'));
-  }
+  const trackInitialView = () => {
+    if (!window._megapack_pv_fired) {
+      window.MegaTracker.track('PageView');
+      window._megapack_pv_fired = true;
+    }
+  };
 
-  // Interceptar cliques em botões de checkout
+  if (document.readyState === 'complete') trackInitialView();
+  else window.addEventListener('load', trackInitialView);
+
+  // LOGICA DO FUNIL V4.2
   document.addEventListener('click', (e) => {
-    const btn = e.target.closest('a');
-    if (!btn) return;
+    const anchor = e.target.closest('a');
+    if (!anchor) return;
 
-    if (btn.href.includes('pay.celetus.com')) {
-      const isPremium = btn.href.includes('NL9KO4PG') || btn.href.includes('PZL2DZN8');
-      window.MegaTracker.track('InitiateCheckout', {
-        content_name: isPremium ? 'MegaPack Premium' : 'MegaPack Basico',
-        value: isPremium ? (btn.href.includes('PZL2DZN8') ? 10.99 : 15.99) : 5.99
+    const href = anchor.href;
+
+    // Detectar Checkout Real (Celetus)
+    if (href.includes('pay.celetus.com')) {
+      let value = 15.99;
+      let name = 'MegaPack Premium';
+
+      if (href.includes('FCX8Z2KC')) { value = 5.99; name = 'MegaPack Basico (Oferta)'; }
+      if (href.includes('PZL2DZN8')) { value = 10.99; name = 'MegaPack Upgrade Vitalicio'; }
+      if (href.includes('NL9KO4PG')) { value = 15.99; name = 'MegaPack Premium Direto'; }
+
+      window.MegaTracker.track('InitiateCheckout', { 
+        content_name: name, 
+        value: value,
+        currency: 'BRL'
       });
-    } else if (btn.href.includes('upgrade.html')) {
-      window.MegaTracker.track('InitiateCheckout', {
-        content_name: 'Iniciou Fluxo Upgrade',
-        value: 5.99
-      });
+    } 
+    // Captura apenas navegação para a página de oferta (NÃO é InitiateCheckout ainda)
+    else if (href.includes('upgrade.html')) {
+       console.log('[MegaTracker] Navegação para Oferta Detectada (R$ 5,99)');
+       // Opcional: track('ViewContent', { content_name: 'Lead interessado em 5,99' })
     }
   });
 
