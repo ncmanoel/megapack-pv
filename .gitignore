@@ -8,3 +8,5 @@ build/
 .settings
 .vscode
 *.log
+
+.vercel
