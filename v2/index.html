@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MegaPack — +15.000 Figurinhas que Transformam seus Stories</title>
+<meta name="description" content="O pack completo de figurinhas para Instagram. +15.000 figurinhas, 10 bônus exclusivos, app próprio. Acesso vitalício por R$15,99.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* =============================================
+   RESET & BASE
+============================================= */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  background:#07080D;
+  color:#F0EEF8;
+  overflow-x:hidden;
+  line-height:1.65;
+  padding-top:42px; /* height of urgency bar */
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* =============================================
+   TOKENS
+============================================= */
+:root{
+  --bg:#07080D;
+  --bg2:#0E1018;
+  --bg3:#161823;
+  --bg4:#1D1F2E;
+  --br:#23273B;
+  --pk:#FF2D6B;
+  --pk2:#FF6090;
+  --pk-glow:rgba(255,45,107,.22);
+  --gd:#FFD23F;
+  --gd-glow:rgba(255,210,63,.15);
+  --gn:#00E09B;
+  --tx:#F0EEF8;
+  --tx2:#9996A8;
+  --tx3:#4E4C5E;
+  --r:12px;
+  --rl:20px;
+}
+
+/* =============================================
+   TYPOGRAPHY
+============================================= */
+h1,h2,h3{font-family:'Syne',sans-serif;font-weight:800;line-height:1.1}
+h1{font-size:clamp(1.75rem,6.5vw,2.8rem)}
+h2{font-size:clamp(1.45rem,5vw,2.1rem)}
+h3{font-size:clamp(1rem,3.5vw,1.25rem)}
+.gtext{
+  background:linear-gradient(120deg,#FF2D6B 0%,#FF7A50 50%,#FFD23F 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+em{font-style:italic;color:var(--pk2)}
+
+/* =============================================
+   LAYOUT
+============================================= */
+.w{max-width:520px;margin:0 auto;padding:0 18px}
+.tc{text-align:center}
+.s{padding:56px 0}
+.s-sm{padding:36px 0}
+
+/* =============================================
+   URGENCY BAR — fixed top
+============================================= */
+#ub{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:var(--pk);
+  padding:7px 14px;
+  display:flex;align-items:center;justify-content:center;
+  gap:8px;flex-wrap:wrap;
+  font-size:12.5px;font-weight:600;
+  line-height:1.3;
+}
+#ub .label{opacity:.9}
+#timer{
+  display:inline-flex;align-items:center;
+  background:rgba(0,0,0,.25);
+  border-radius:6px;padding:2px 9px;
+  font-size:14px;font-weight:800;letter-spacing:.05em;
+}
+
+/* =============================================
+   SCARCITY BAR
+============================================= */
+.sbar{
+  background:var(--bg2);
+  border-bottom:1px solid var(--br);
+  padding:9px 18px;
+  display:flex;align-items:center;justify-content:center;
+  gap:6px;flex-wrap:wrap;
+  font-size:12.5px;color:var(--tx2);text-align:center;
+}
+.sbar .hi{color:var(--gd);font-weight:700}
+.sbar .dn{color:var(--pk);font-weight:700}
+.pulse{width:7px;height:7px;border-radius:50%;background:var(--pk);animation:blink 1.2s ease-in-out infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+
+/* =============================================
+   HERO
+============================================= */
+.hero{
+  background:var(--bg);padding:48px 0 44px;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;top:-120px;right:-100px;
+  width:440px;height:440px;
+  background:radial-gradient(circle,var(--pk-glow) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero::after{
+  content:'';position:absolute;bottom:-80px;left:-80px;
+  width:320px;height:320px;
+  background:radial-gradient(circle,var(--gd-glow) 0%,transparent 65%);
+  pointer-events:none;
+}
+.badge{
+  display:inline-flex;align-items:center;gap:5px;
+  background:rgba(255,45,107,.1);
+  border:1px solid rgba(255,45,107,.3);
+  border-radius:100px;padding:4px 14px;
+  font-size:11.5px;font-weight:700;
+  color:var(--pk2);letter-spacing:.05em;text-transform:uppercase;
+  margin-bottom:16px;
+}
+.badge-gold{
+  background:rgba(255,210,63,.1);
+  border-color:rgba(255,210,63,.25);
+  color:var(--gd);
+}
+.badge-green{
+  background:rgba(0,224,155,.08);
+  border-color:rgba(0,224,155,.2);
+  color:var(--gn);
+}
+.hero-sub{
+  font-size:clamp(.95rem,3vw,1.05rem);
+  color:var(--tx2);margin-bottom:26px;
+  max-width:460px;margin-left:auto;margin-right:auto;
+}
+
+/* Video placeholder */
+.vplayer{
+  background:var(--bg3);
+  border:1px solid var(--br);
+  border-radius:var(--rl);
+  aspect-ratio:16/9;max-width:440px;
+  margin:0 auto 26px;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:10px;
+  position:relative;overflow:hidden;cursor:pointer;
+}
+.vplayer img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35}
+.play{
+  position:relative;z-index:1;
+  width:60px;height:60px;border-radius:50%;
+  background:var(--pk);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 0 14px rgba(255,45,107,.18);
+  animation:ppulse 2.2s ease-in-out infinite;
+}
+.play::after{
+  content:'';
+  border-left:20px solid #fff;
+  border-top:12px solid transparent;
+  border-bottom:12px solid transparent;
+  margin-left:4px;
+}
+@keyframes ppulse{0%,100%{box-shadow:0 0 0 14px rgba(255,45,107,.18)}50%{box-shadow:0 0 0 22px rgba(255,45,107,.05)}}
+.vplayer-label{position:relative;z-index:1;font-size:12px;color:rgba(255,255,255,.55);font-weight:500}
+
+/* Price box */
+.pbox{
+  background:var(--bg3);border:1px solid var(--br);
+  border-radius:var(--rl);padding:18px 22px;
+  max-width:360px;margin:0 auto 20px;text-align:center;
+}
+.pbox-from{font-size:12.5px;color:var(--tx3);text-decoration:line-through;margin-bottom:1px}
+.pbox-val{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(2rem,8vw,2.8rem);font-weight:800;
+  color:var(--tx);line-height:1;margin-bottom:5px;
+}
+.pbox-val sup{font-size:42%;vertical-align:top;margin-top:6px;display:inline-block}
+.pbox-note{font-size:12.5px;color:var(--pk2);font-weight:600}
+
+/* CTA button */
+.cta{
+  display:flex;align-items:center;justify-content:center;gap:7px;
+  font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;
+  font-size:1rem;background:var(--pk);color:#fff;
+  border:none;border-radius:var(--r);
+  padding:18px 26px;width:100%;max-width:360px;
+  margin:0 auto;cursor:pointer;
+  box-shadow:0 8px 28px rgba(255,45,107,.42);
+  animation:cglow 2.4s ease-in-out infinite;
+  position:relative;overflow:hidden;
+  transition:transform .14s;text-align:center;
+}
+.cta::before{
+  content:'';position:absolute;top:0;left:-100%;width:55%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.14),transparent);
+  animation:shine 2.5s ease-in-out infinite;
+}
+@keyframes shine{0%{left:-100%}100%{left:200%}}
+@keyframes cglow{0%,100%{box-shadow:0 8px 28px rgba(255,45,107,.42)}50%{box-shadow:0 8px 48px rgba(255,45,107,.72)}}
+.cta:hover{transform:translateY(-2px)}
+.cta:active{transform:scale(.98)}
+.cta-lg{padding:21px 30px;font-size:1.05rem;border-radius:var(--rl)}
+.cta-sub{
+  font-size:11px;color:var(--tx3);
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  flex-wrap:wrap;margin-top:9px;
+}
+.cta-sub span{display:flex;align-items:center;gap:3px}
+.cta-sub span::before{content:'✓';color:var(--gn);font-weight:700}
+
+/* =============================================
+   PROOF BAR
+============================================= */
+.pbar{background:var(--bg2);border-top:1px solid var(--br);border-bottom:1px solid var(--br);padding:14px 0}
+.pbar-inner{display:flex;justify-content:center;align-items:center;gap:5px 18px;flex-wrap:wrap;text-align:center}
+.pstat{display:flex;flex-direction:column;align-items:center}
+.pstat-n{font-family:'Syne',sans-serif;font-size:1.55rem;font-weight:800;color:var(--pk)}
+.pstat-l{font-size:10.5px;color:var(--tx3)}
+.psep{width:1px;height:32px;background:var(--br)}
+
+/* =============================================
+   HOW IT WORKS
+============================================= */
+.how-s{background:var(--bg2)}
+.steps{display:flex;flex-direction:column;gap:0;margin-top:30px;position:relative}
+.steps::before{
+  content:'';position:absolute;left:22px;top:46px;bottom:46px;
+  width:2px;background:linear-gradient(to bottom,var(--pk),var(--gd),transparent);
+}
+.step{display:flex;gap:16px;padding:18px 0;position:relative}
+.step-n{
+  width:46px;height:46px;flex-shrink:0;
+  background:var(--bg3);border:2px solid var(--pk);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Syne',sans-serif;font-size:1rem;font-weight:800;color:var(--pk);
+  position:relative;z-index:1;
+}
+.step h3{font-size:.95rem;font-weight:700;color:var(--tx);margin-bottom:2px}
+.step p{font-size:13px;color:var(--tx2);line-height:1.6}
+
+/* =============================================
+   APP SECTION
+============================================= */
+.app-s{background:var(--bg)}
+.carousel-track{
+  overflow-x:auto;scroll-snap-type:x mandatory;
+  display:flex;gap:12px;
+  padding:18px 18px 14px;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  margin:0 -18px;
+}
+.carousel-track::-webkit-scrollbar{display:none}
+.cslide{scroll-snap-align:start;flex-shrink:0;width:190px}
+.phone{
+  background:var(--bg3);border:2px solid var(--br);border-radius:22px;
+  overflow:hidden;aspect-ratio:9/16;position:relative;
+  display:flex;align-items:center;justify-content:center;
+}
+.phone img{width:100%;height:100%;object-fit:cover}
+.notch{position:absolute;top:7px;left:50%;transform:translateX(-50%);width:46px;height:7px;background:var(--bg);border-radius:10px;z-index:2}
+.slide-label{font-size:11.5px;color:var(--tx2);text-align:center;margin-top:7px;font-weight:500}
+.cdots{display:flex;justify-content:center;gap:5px;margin-top:8px}
+.cdots span{width:6px;height:6px;border-radius:50%;background:var(--br);transition:all .2s}
+.cdots span.on{background:var(--pk);width:16px;border-radius:10px}
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.feat-card{background:var(--bg3);border:1px solid var(--br);border-radius:var(--r);padding:15px}
+.feat-icon{font-size:22px;margin-bottom:7px}
+.feat-title{font-size:12.5px;font-weight:700;color:var(--tx);margin-bottom:3px}
+.feat-desc{font-size:11.5px;color:var(--tx2);line-height:1.5}
+
+/* =============================================
+   TESTIMONIALS
+============================================= */
+.testi-s{background:var(--bg2)}
+.testi-grid{display:flex;flex-direction:column;gap:12px;margin-top:26px}
+.tcard{background:var(--bg3);border:1px solid var(--br);border-radius:var(--r);overflow:hidden}
+.tcard img{width:100%;display:block}
+.tcard-body{padding:18px}
+.tstars{color:var(--gd);font-size:13px;margin-bottom:7px}
+.ttext{font-size:13.5px;color:#cac7d6;line-height:1.7;font-style:italic;margin-bottom:12px}
+.tauthor{display:flex;align-items:center;gap:9px}
+.tavatar{
+  width:34px;height:34px;border-radius:50%;
+  background:linear-gradient(135deg,var(--pk),#8B44FF);
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;flex-shrink:0;
+}
+.tname{font-size:12.5px;font-weight:700;color:var(--tx)}
+.trole{font-size:11px;color:var(--tx3)}
+
+/* =============================================
+   RESULTS
+============================================= */
+.results-s{background:var(--bg)}
+.rphones{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.rphone{
+  background:var(--bg3);border:1px solid var(--br);border-radius:14px;
+  overflow:hidden;aspect-ratio:9/16;position:relative;
+}
+.rphone img{width:100%;height:100%;object-fit:cover}
+.rphone-tag{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(to top,rgba(0,0,0,.88),transparent);
+  padding:22px 10px 10px;
+  font-size:10.5px;font-weight:600;color:var(--tx2);text-align:center;
+}
+
+/* =============================================
+   BONUS BRIDGE
+============================================= */
+.bonus-bridge{
+  background:var(--bg2);
+  padding:36px 18px;
+  text-align:center;
+  border-top:1px solid var(--br);border-bottom:1px solid var(--br);
+}
+
+/* =============================================
+   BONUS SECTIONS
+============================================= */
+.bs{padding:52px 0;position:relative;overflow:hidden}
+.bs:nth-of-type(odd){background:var(--bg)}
+.bs:nth-of-type(even){background:var(--bg2)}
+.bnum-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,210,63,.08);
+  border:1px solid rgba(255,210,63,.22);
+  border-radius:100px;padding:4px 13px;
+  font-size:11px;font-weight:700;color:var(--gd);
+  letter-spacing:.05em;text-transform:uppercase;
+  margin-bottom:14px;
+}
+.bnum-tag .num{
+  background:var(--gd);color:#000;
+  border-radius:100px;padding:1px 8px;
+  font-size:10px;font-weight:800;
+}
+.bonus-img{
+  border-radius:var(--rl);overflow:hidden;
+  border:1px solid var(--br);background:var(--bg3);
+  margin-bottom:20px;
+}
+.bonus-img img{width:100%;display:block}
+.bpromise{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:clamp(1.2rem,4.5vw,1.6rem);
+  color:var(--tx);line-height:1.2;margin-bottom:9px;
+}
+.bpromise .pk{color:var(--pk)}
+.bpromise .gd{color:var(--gd)}
+.bdesc{font-size:14px;color:var(--tx2);line-height:1.75;margin-bottom:16px}
+.bbenefs{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
+.bben{display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:var(--tx2)}
+.bchk{
+  width:19px;height:19px;flex-shrink:0;
+  background:rgba(0,224,155,.1);border:1px solid rgba(0,224,155,.22);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:9px;color:var(--gn);font-weight:700;margin-top:2px;
+}
+.bben strong{color:var(--tx);font-weight:600}
+.bprice{
+  display:flex;align-items:center;gap:10px;
+  padding:12px 15px;
+  background:rgba(0,224,155,.04);
+  border:1px dashed rgba(0,224,155,.18);
+  border-radius:var(--r);
+}
+.bprice-old{font-size:13px;text-decoration:line-through;color:var(--tx3)}
+.bprice-free{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--gn)}
+.bprice-label{font-size:11px;color:var(--tx3);margin-left:auto}
+
+/* =============================================
+   VALUE ANCHOR
+============================================= */
+.anchor{background:var(--bg3);padding:32px 18px;border-top:1px solid var(--br)}
+
+/* =============================================
+   PRICING
+============================================= */
+.pricing-s{background:var(--bg);padding:60px 0;position:relative;overflow:hidden}
+.pricing-s::before{
+  content:'';position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:560px;height:560px;
+  background:radial-gradient(circle,rgba(255,45,107,.05) 0%,transparent 60%);
+  pointer-events:none;
+}
+.pcard{
+  background:var(--bg3);border:1px solid var(--br);
+  border-radius:var(--rl);overflow:hidden;
+  max-width:420px;margin:0 auto;position:relative;
+}
+.pcard::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--pk),var(--gd));
+}
+
+/* progress bar */
+.prog-wrap{margin-bottom:18px;max-width:420px;margin-left:auto;margin-right:auto}
+.prog-labels{display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:5px}
+.prog-labels .l{color:var(--tx2)}
+.prog-labels .r{color:var(--pk);font-weight:700}
+.prog-track{height:6px;background:var(--bg4);border-radius:10px;overflow:hidden}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--pk),var(--gd));border-radius:10px;transition:width 1s ease}
+
+.ph{padding:22px 22px 18px;border-bottom:1px solid var(--br);text-align:center}
+.ph-plan{font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tx3);margin-bottom:5px}
+.ph-from{font-size:12px;text-decoration:line-through;color:var(--tx3);margin-bottom:1px}
+.ph-price{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(3rem,12vw,5rem);font-weight:800;
+  color:var(--tx);line-height:1;margin-bottom:5px;
+}
+.ph-price sup{font-size:33%;vertical-align:top;margin-top:10px;display:inline-block;color:var(--tx2)}
+.ph-save{
+  display:inline-flex;align-items:center;gap:5px;
+  background:rgba(0,224,155,.1);border:1px solid rgba(0,224,155,.18);
+  border-radius:100px;padding:3px 12px;
+  font-size:11.5px;font-weight:700;color:var(--gn);
+}
+.pf-block{padding:18px 22px;border-bottom:1px solid var(--br)}
+.pf-title{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--tx3);margin-bottom:12px}
+.pf-list{display:flex;flex-direction:column;gap:8px}
+.pf-item{display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:var(--tx2)}
+.pf-item.main{color:var(--tx);font-weight:600}
+.pf-item.bonus-i{font-size:12.5px}
+.pfck{color:var(--gn);font-weight:700;flex-shrink:0;margin-top:1px}
+.pfst{color:var(--gd)}
+.pcta-block{padding:18px 22px 22px;text-align:center}
+.pcta-note{font-size:11.5px;color:var(--tx3);margin-bottom:12px}
+
+/* guarantee */
+.gblock{
+  display:flex;align-items:flex-start;gap:13px;
+  padding:16px 18px;
+  background:rgba(0,224,155,.04);
+  border:1px solid rgba(0,224,155,.14);
+  border-radius:var(--r);
+  max-width:420px;margin:18px auto 0;
+}
+.gicon{font-size:34px;flex-shrink:0}
+.gtitle{font-size:13.5px;font-weight:700;color:var(--gn);margin-bottom:2px}
+.gtext{font-size:12px;color:var(--tx2);line-height:1.65}
+
+/* =============================================
+   FAQ
+============================================= */
+.faq-s{background:var(--bg2);padding:52px 0}
+.faq-list{display:flex;flex-direction:column;gap:8px;margin-top:26px}
+.fitem{background:var(--bg3);border:1px solid var(--br);border-radius:var(--r);overflow:hidden}
+.fq{
+  width:100%;background:none;border:none;
+  padding:15px 17px;
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+  text-align:left;
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;font-weight:600;
+  color:var(--tx);cursor:pointer;
+}
+.fq:hover{color:var(--pk2)}
+.ftog{color:var(--tx3);font-size:19px;flex-shrink:0;transition:transform .25s}
+.fitem.open .ftog{transform:rotate(45deg)}
+.fa{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.fa-inner{padding:0 17px 15px;font-size:13px;color:var(--tx2);line-height:1.7}
+
+/* =============================================
+   FINAL CTA
+============================================= */
+.final-s{background:var(--bg);padding:60px 0;text-align:center;position:relative;overflow:hidden}
+.final-s::before{
+  content:'';position:absolute;bottom:-60px;left:50%;transform:translateX(-50%);
+  width:480px;height:280px;
+  background:radial-gradient(circle,rgba(255,45,107,.09) 0%,transparent 65%);
+  pointer-events:none;
+}
+
+/* =============================================
+   FOOTER
+============================================= */
+footer{background:#030407;border-top:1px solid var(--br);padding:26px 18px;text-align:center}
+.flinks{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:10px}
+.flinks a{font-size:11.5px;color:var(--tx3);transition:color .2s}
+.flinks a:hover{color:var(--tx2)}
+.fcopy{font-size:10.5px;color:var(--tx3);line-height:1.8}
+
+/* =============================================
+   STICKY CTA
+============================================= */
+#sticky{
+  position:fixed;bottom:0;left:0;right:0;z-index:999;
+  background:rgba(7,8,13,.96);backdrop-filter:blur(12px);
+  border-top:1px solid var(--br);
+  padding:9px 16px;
+  display:flex;align-items:center;gap:10px;
+  transform:translateY(100%);
+  transition:transform .32s cubic-bezier(.4,0,.2,1);
+}
+#sticky.show{transform:translateY(0)}
+.sticky-info{flex:1;min-width:0}
+.sticky-price{font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:800;color:var(--tx)}
+.sticky-label{font-size:10px;color:var(--tx3)}
+.sticky-cd{font-size:11px;color:var(--pk2);font-weight:700;white-space:nowrap}
+#sticky .cta{width:auto;flex-shrink:0;padding:12px 18px;font-size:.88rem;border-radius:var(--r);max-width:none;box-shadow:none;animation:none}
+
+/* =============================================
+   RESPONSIVE
+============================================= */
+@media(max-width:380px){
+  .feat-grid,.rphones{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- URGENCY BAR -->
+<div id="ub">
+  <span class="label">⚡ OFERTA ESPECIAL — preço sobe em:</span>
+  <span id="timer">15:00</span>
+  <span class="label">— Garanta agora!</span>
+</div>
+
+<!-- SCARCITY BAR -->
+<div class="sbar">
+  <div class="pulse"></div>
+  <span><span class="hi" id="views">487</span> pessoas viram essa oferta hoje</span>
+  <span>·</span>
+  <span>Restam <span class="dn" id="slots">23</span> acessos neste preço</span>
+</div>
+
+<!-- =============================================
+  HERO — PRIMEIRA DOBRA
+============================================= -->
+<section class="hero">
+  <div class="w tc">
+
+    <div class="badge">🔥 +15.000 figurinhas · atualização mensal</div>
+
+    <h1>Seus Stories Nunca Mais<br>Serão <em>Ignorados</em></h1>
+
+    <p class="hero-sub">
+      O pack completo de figurinhas que transforma o seu Instagram em
+      <strong>máquina de engajamento e vendas</strong> — em menos de 5 minutos,
+      sem Canva, sem designer.
+    </p>
+
+    <!-- DEVELOPER NOTE: replace div below with real demo video -->
+    <div class="vplayer" id="vsl-container">
+      <video id="vsl-video" playsinline muted loop poster="https://media.atomicatpages.net/u/nijnbdioznMW5Oil1vOmGJUBuue2/Pictures/SyPGAv4688126.jpeg" style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0;">
+        <source src="https://ckwvvqqndafajlahngsh.supabase.co/storage/v1/object/public/videos/vsl_megapack_v4.mp4" type="video/mp4">
+      </video>
+      <div class="play" id="vsl-overlay"></div>
+      <span class="vplayer-label">▶ Assista a demonstração (45 seg)</span>
+    </div>
+
+    <div class="pbox">
+      <div class="pbox-from">De R$ 459,90</div>
+      <div class="pbox-val"><sup>R$</sup>15<span style="font-size:50%">,99</span></div>
+      <div class="pbox-note">Acesso vitalício + 10 bônus exclusivos</div>
+    </div>
+
+    <a href="#pricing" class="cta cta-lg">
+      🔓 LIBERAR MEU ACESSO AGORA →
+    </a>
+    <div class="cta-sub">
+      <span>Acesso imediato</span>
+      <span>7 dias de garantia</span>
+      <span>Pagamento seguro</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<div class="pbar">
+  <div class="w">
+    <div class="pbar-inner">
+      <div class="pstat"><div class="pstat-n">15k+</div><div class="pstat-l">figurinhas</div></div>
+      <div class="psep"></div>
+      <div class="pstat"><div class="pstat-n">80+</div><div class="pstat-l">categorias</div></div>
+      <div class="psep"></div>
+      <div class="pstat"><div class="pstat-n">10</div><div class="pstat-l">bônus grátis</div></div>
+      <div class="psep"></div>
+      <div class="pstat"><div class="pstat-n">7</div><div class="pstat-l">dias garantia</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================
+  COMO FUNCIONA — SEGUNDA DOBRA
+============================================= -->
+<section class="s how-s">
+  <div class="w">
+    <div class="tc">
+      <div class="badge" style="margin-bottom:14px">Simples assim</div>
+      <h2>Como funciona?</h2>
+      <p style="color:var(--tx2);font-size:14px;margin-top:8px;max-width:380px;margin-left:auto;margin-right:auto">
+        Da compra ao primeiro story incrível em menos de 10 minutos.
+      </p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">1</div>
+        <div>
+          <h3>Escolha o Pack Premium e finalize</h3>
+          <p>Clique no botão, preencha seus dados e conclua via Pix ou cartão. Menos de 2 minutos.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <div>
+          <h3>Receba o acesso por e-mail e WhatsApp</h3>
+          <p>Assim que o pagamento é confirmado, o link chega na hora. Sem esperar, sem fila.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">3</div>
+        <div>
+          <h3>Entre no app ou Google Drive</h3>
+          <p>Tudo organizado por tema, pronto para explorar. Acesse de qualquer celular, iOS ou Android.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">4</div>
+        <div>
+          <h3>Salve a figurinha em 1 toque</h3>
+          <p>Escolha o que precisa, salve na galeria. São PNGs com fundo transparente, prontos para usar.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">5</div>
+        <div>
+          <h3>Publique e veja a diferença</h3>
+          <p>Abra o Instagram, arraste a figurinha no story e poste. Story profissional em menos de 5 min.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+  NA PALMA DA SUA MÃO — APP
+============================================= -->
+<section class="s app-s">
+  <div class="w tc">
+    <div class="badge" style="margin-bottom:14px">App exclusivo</div>
+    <h2>Na palma da<br>sua mão</h2>
+    <p style="color:var(--tx2);font-size:14px;margin-top:8px">
+      Acesse tudo pelo app, sem precisar de computador ou pasta no Drive.
+    </p>
+  </div>
+
+  <div class="carousel-track" id="carousel">
+    <div class="cslide">
+      <div class="phone"><div class="notch"></div>
+        <img src="https://media.atomicatpages.net/u/nijnbdioznMW5Oil1vOmGJUBuue2/Pictures/XaFpug6096910.jpeg" alt="App" loading="lazy">
+      </div>
+      <div class="slide-label">Tela inicial do app</div>
+    </div>
+    <div class="cslide">
+      <div class="phone"><div class="notch"></div>
+        <img src="https://media.atomicatpages.net/u/nijnbdioznMW5Oil1vOmGJUBuue2/Pictures/SyPGAv4688126.jpeg" alt="Figurinhas" loading="lazy">
+      </div>
+      <div class="slide-label">Figurinhas por tema</div>
+    </div>
+    <div class="cslide">
+      <div class="phone"><div class="notch"></div>
+        <img src="https://media.atomicatpages.net/u/nijnbdioznMW5Oil1vOmGJUBuue2/Pictures/gbYidP6049122.jpeg" alt="Mini cursos" loading="lazy">
+      </div>
+      <div class="slide-label">Mini cursos incluídos</div>
+    </div>
+    <div class="cslide">
+      <div class="phone"><div class="notch"></div>
+        <img src="https://media.atomicatpages.net/u/nijnbdioznMW5Oil1vOmGJUBuue2/Pictures/wypXKF6246315.jpeg" alt="Pack Sofisticação" loading="lazy">
+      </div>
+      <div class="slide-label">Pack Sofisticação</div>
+    </div>
+    <div class="cslide">
+      <div class="phone"><div class="notch"></div>
+        <img src="https://media.atomicatpages.net/u/nijnbdioznMW5Oil1vOmGJUBuue2/Pictures/YtWWrp6879333.jpeg" alt="Paletas" loading="lazy">
+      </div>
+      <div class="slide-label">Paletas de Sucesso</div>
+    </div>
+  </div>
+  <div class="cdots tc" id="cdots">
+    <span class="on"></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <div class="w">
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="feat-icon">📱</div>
+        <div class="feat-title">Acesso pelo celular</div>
+        <div class="feat-desc">Sem computador. Tudo direto no app, onde você estiver.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">⚡</div>
+        <div class="feat-title">Compartilhe em 1 toque</div>
+        <div class="feat-desc">Salve ou envie qualquer figurinha diretamente para o Instagram.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🗂️</div>
+        <div class="feat-title">Organizado por tema</div>
+        <div class="feat-desc">80+ categorias. Você acha o que precisa em segundos.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🔔</div>
+        <div class="feat-title">Novidades automáticas</div>
+        <div class="feat-desc">Notificação na hora em que novos packs forem adicionados.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+  DEPOIMENTOS
+============================================= -->
+<section class="s testi-s">
+  <div class="w">
+    <div class="tc">
+      <div class="badge" style="margin-bottom:14px">Prova real</div>
+      <h2>Quem usou,<br>não para mais</h2>
+      <p style="color:var(--tx2);font-size:14px;margin-top:8px">
+        Resultados reais de pessoas comuns que transformaram o Instagram com o MegaPack.
+      </p>
+    </div>
+    <div class="testi-grid">
+
+      <!-- Usar screenshots reais de WhatsApp/DM — imagens da página original -->
+      <div class="tcard">
+        <img src="https://media.atomicatpages.net/u/nijnbdioznMW5Oil1vOmGJUBuue2/Pictures/miCEGJ0138296.jpeg" alt="Depoimento" loading="lazy">
+      </div>
+      <div class="tcard">
+        <img src="https://media.atomicatpages.net/u/nijnbdioznMW5Oil1vOmGJUBuue2/Pictures/sJuqlx0169960.jpeg" alt="Depoimento" loading="lazy">
+      </div>
+      <div class="tcard">
+        <img src="https://media.atomicatpages.net/u/nijnbdioznMW5Oil1vOmGJUBuue2/Pictures/vkdunk0191563.jpeg" alt="Depoimento" loading="lazy">
+      </div>
+      <!-- card placeholder — substituir por screenshot real -->
+      <div class="tcard">
+        <div class="tcard-body">
+          <div class="tstars">★★★★★</div>
+          <p class="ttext">"Meus stories eram sem graça e eu perdia seguidores. Depois do MegaPack, meu engajamento dobrou em 15 dias. Não consigo imaginar postar sem ele."</p>
+          <div class="tauthor">
+            <div class="tavatar">RS</div>
+            <div><div class="tname">Rafaela S.</div><div class="trole">Nutricionista · SP</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+  EXEMPLOS DE RESULTADO FINAL
+============================================= -->
+<section class="s results-s">
+  <div class="w">
+    <div class="tc">
+      <div class="badge badge-gold" style="margin-bottom:14px">Resultado final</div>
+      <h2>Veja como ficam<br>os stories com o pack</h2>
+      <p style="color:var(--tx2);font-size:14px;margin-top:8px">
+        Stories criados por pessoas comuns — sem designer, sem Canva pago.
+      </p>
+    </div>
+    <!-- DEVELOPER NOTE: substituir pelos prints reais de stories criados com o MegaPack -->
+    <div class="rphones">
+      <div class="rphone">
+        <img src="https://media.atomicatpages.net/u/nijnbdioznMW5Oil1vOmGJUBuue2/Pictures/SyPGAv4688126.jpeg" alt="Story exemplo" loading="lazy">
+        <div class="rphone-tag">Nicho estética</div>
+      </div>
+      <div class="rphone">
+        <img src="https://media.atomicatpages.net/u/nijnbdioznMW5Oil1vOmGJUBuue2/Pictures/wypXKF6246315.jpeg" alt="Story exemplo" loading="lazy">
+        <div class="rphone-tag">Nicho moda</div>
+      </div>
+      <div class="rphone">
+        <img src="https://media.atomicatpages.net/u/nijnbdioznMW5Oil1vOmGJUBuue2/Pictures/KwFlbs6735555.jpeg" alt="Story exemplo" loading="lazy">
+        <div class="rphone-tag">Nicho fitness</div>
+      </div>
+      <div class="rphone">
+        <img src="https://media.atomicatpages.net/u/nijnbdioznMW5Oil1vOmGJUBuue2/Pictures/cqbxiF6502077.jpeg" alt="Story exemplo" loading="lazy">
+        <div class="rphone-tag">Nicho confeitaria</div>
+      </div>
+    </div>
+    <div style="margin-top:16px;padding:13px 15px;background:var(--bg3);border:1px solid var(--br);border-radius:var(--r);text-align:center">
+      <p style="font-size:13px;color:var(--tx2)">📸 <strong style="color:var(--tx)">Dezenas de modelos prontos</strong> organizados por nicho estão te esperando dentro do pack.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BONUS BRIDGE -->
+<div class="bonus-bridge">
+  <div class="w tc">
+    <div class="badge badge-gold" style="margin-bottom:14px">Só no Pack Premium</div>
+    <h2>Além das figurinhas, você ainda<br>leva <span class="gtext">10 bônus exclusivos</span></h2>
+    <p style="color:var(--tx2);font-size:14px;margin-top:10px;max-width:400px;margin-left:auto;margin-right:auto">
+      Cada bônus foi criado para <strong>potencializar seus resultados</strong>.
+      Separados, custariam <s style="color:var(--tx3)">R$ 459,90</s>.
+      No Premium, tudo por <strong style="color:var(--pk)">R$ 15,99</strong>.
+    </p>
+  </div>
+</div>
+
+<!-- =============================================
+  BÔNUS 1 — APLICATIVO
+============================================= -->
+<section class="bs" id="b1">
+  <div class="w">
+    <div class="bnum-tag"><span class="num">BÔNUS 1</span> de 10</div>
+    <div class="bonus-img"><img src="https://media.atomicatpages.net/u/nijnbdioznMW5Oil1vOmGJUBuue2/Pictures/XaFpug6096910.jpeg" alt="Aplicativo" loading="lazy"></div>
+    <div class="bpromise">Aplicativo com<br><span class="pk">Todo o Conteúdo</span></div>
+    <p class="bdesc">Chega de ficar procurando pasta no Drive ou não achando a figurinha que precisa. O app exclusivo do MegaPack coloca tudo na palma da sua mão — organizado, rápido e offline.</p>
+    <div class="bbenefs">
+      <div class="bben"><div class="bchk">✓</div><span><strong>Acesso offline:</strong> baixe os packs e use mesmo sem internet</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Compartilhe em 1 toque</strong> direto para o Instagram sem sair do app</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Busca por tema</strong> — ache a figurinha certa em segundos</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Videoaulas incluídas</strong> dentro do próprio app</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>iOS e Android</strong> — funciona nos dois sem exceção</span></div>
+    </div>
+    <div class="bprice">
+      <span class="bprice-old">De R$ 49,99</span>
+      <span class="bprice-free">GRÁTIS</span>
+      <span class="bprice-label">incluso no Premium</span>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+  BÔNUS 2 — STORIES LUCRATIVOS
+============================================= -->
+<section class="bs" id="b2">
+  <div class="w">
+    <div class="bnum-tag"><span class="num">BÔNUS 2</span> de 10</div>
+    <div class="bonus-img"><img src="https://media.atomicatpages.net/u/nijnbdioznMW5Oil1vOmGJUBuue2/Pictures/gbYidP6049122.jpeg" alt="Stories Lucrativos" loading="lazy"></div>
+    <div class="bpromise">Stories Lucrativos:<br><span class="pk">Do zero a stories que vendem</span></div>
+    <p class="bdesc">Ter figurinhas bonitas é ótimo. Saber usá-las estrategicamente é o que transforma seguidores em clientes. Esse mini curso te ensina como criar stories que geram engajamento real e convertem em vendas.</p>
+    <div class="bbenefs">
+      <div class="bben"><div class="bchk">✓</div><span><strong>Todos os recursos nativos</strong> do Instagram Stories de A a Z</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Técnicas de edição de foto e vídeo</strong> sem app pago</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Como criar stories que prendem</strong> a atenção do começo ao fim</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Estratégias de stories que vendem</strong> para qualquer nicho</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Sequência de stories</strong> que conduz o seguidor até a compra</span></div>
+    </div>
+    <div class="bprice">
+      <span class="bprice-old">De R$ 79,99</span>
+      <span class="bprice-free">GRÁTIS</span>
+      <span class="bprice-label">incluso no Premium</span>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+  BÔNUS 3 — PACK SOFISTICAÇÃO
+============================================= -->
+<section class="bs" id="b3">
+  <div class="w">
+    <div class="bnum-tag"><span class="num">BÔNUS 3</span> de 10</div>
+    <div class="bonus-img"><img src="https://media.atomicatpages.net/u/nijnbdioznMW5Oil1vOmGJUBuue2/Pictures/wypXKF6246315.jpeg" alt="Pack Sofisticação" loading="lazy"></div>
+    <div class="bpromise">Pack +6.000 Figurinhas<br><span class="gd">Sofisticação</span></div>
+    <p class="bdesc">Quer que seu perfil transmita luxo, elegância e profissionalismo? São 6.000 figurinhas premium pensadas para elevar qualquer story para outro nível visual e atrair a clientela certa.</p>
+    <div class="bbenefs">
+      <div class="bben"><div class="bchk">✓</div><span><strong>Visual premium</strong> que diferencia seu perfil imediatamente</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Ideal para nichos de alto padrão:</strong> estética, semi joias, beleza, moda</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>6.000 opções sofisticadas</strong> para nunca repetir o mesmo estilo</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Atrai clientela de maior poder aquisitivo</strong> com visual refinado</span></div>
+    </div>
+    <div class="bprice">
+      <span class="bprice-old">De R$ 39,99</span>
+      <span class="bprice-free">GRÁTIS</span>
+      <span class="bprice-label">incluso no Premium</span>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+  BÔNUS 4 — PACK EXPANSÃO
+============================================= -->
+<section class="bs" id="b4">
+  <div class="w">
+    <div class="bnum-tag"><span class="num">BÔNUS 4</span> de 10</div>
+    <div class="bonus-img"><img src="https://media.atomicatpages.net/u/nijnbdioznMW5Oil1vOmGJUBuue2/Pictures/cqbxiF6502077.jpeg" alt="Pack Expansão" loading="lazy"></div>
+    <div class="bpromise">Pack +4.000 Figurinhas<br><span class="gd">Expansão</span></div>
+    <p class="bdesc">Nunca mais você vai travar sem ter o que postar. 4.000 stickers criativos para todas as ocasiões — datas comemorativas, tendências, nichos variados. Liberdade criativa infinita.</p>
+    <div class="bbenefs">
+      <div class="bben"><div class="bchk">✓</div><span><strong>4.000 opções criativas</strong> para todas as ocasiões do calendário</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Chega de repetir</strong> os mesmos elementos de sempre</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Temas sazonais:</strong> datas comemorativas, feriados e tendências</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Estética variada:</strong> do minimalista ao colorido, tem tudo</span></div>
+    </div>
+    <div class="bprice">
+      <span class="bprice-old">De R$ 29,99</span>
+      <span class="bprice-free">GRÁTIS</span>
+      <span class="bprice-label">incluso no Premium</span>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+  BÔNUS 5 — SOMBRAS SOFISTICADAS
+============================================= -->
+<section class="bs" id="b5">
+  <div class="w">
+    <div class="bnum-tag"><span class="num">BÔNUS 5</span> de 10</div>
+    <div class="bonus-img"><img src="https://media.atomicatpages.net/u/nijnbdioznMW5Oil1vOmGJUBuue2/Pictures/zEwunH6697722.jpeg" alt="Sombras Sofisticadas" loading="lazy"></div>
+    <div class="bpromise">Pack +450<br><span class="pk">Sombras Sofisticadas</span></div>
+    <p class="bdesc">Sabe aquelas fotos de produtos com aquela sombra elegante que parece foto de estúdio profissional? Isso é exatamente o que esse pack entrega. Profundidade, realismo e efeito 3D em 1 arraste — sem Photoshop.</p>
+    <div class="bbenefs">
+      <div class="bben"><div class="bchk">✓</div><span><strong>450 sombras</strong> — o dobro do que qualquer concorrente oferece</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Visual tridimensional instantâneo</strong> sem designer nem app pago</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Ideal para fotos de produto:</strong> cosméticos, roupas, alimentos, eletrônicos</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Aumenta a percepção de valor</strong> do seu produto imediatamente</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Bônus:</strong> vídeo explicativo de aplicação incluso</span></div>
+    </div>
+    <div class="bprice">
+      <span class="bprice-old">De R$ 29,99</span>
+      <span class="bprice-free">GRÁTIS</span>
+      <span class="bprice-label">incluso no Premium</span>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+  BÔNUS 6 — ÍCONES
+============================================= -->
+<section class="bs" id="b6">
+  <div class="w">
+    <div class="bnum-tag"><span class="num">BÔNUS 6</span> de 10</div>
+    <div class="bonus-img"><img src="https://media.atomicatpages.net/u/nijnbdioznMW5Oil1vOmGJUBuue2/Pictures/uqtbkz6649190.jpeg" alt="Ícones" loading="lazy"></div>
+    <div class="bpromise">Pack +900<br><span class="gd">Ícones de Destaque</span></div>
+    <p class="bdesc">A primeira coisa que qualquer visitante vê no seu perfil são os Destaques. Se parecerem bagunçados, a pessoa vai embora. Com 900 ícones organizados por estilo, seu perfil transmite autoridade na primeira visita.</p>
+    <div class="bbenefs">
+      <div class="bben"><div class="bchk">✓</div><span><strong>900 ícones</strong> organizados por estilo e paleta de cores</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Identidade visual coerente</strong> que transmite profissionalismo</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Primeira impressão memorável</strong> que faz o visitante ficar no perfil</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Compatível com todos os nichos:</strong> moda, saúde, negócios, educação</span></div>
+    </div>
+    <div class="bprice">
+      <span class="bprice-old">De R$ 39,99</span>
+      <span class="bprice-free">GRÁTIS</span>
+      <span class="bprice-label">incluso no Premium</span>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+  BÔNUS 7 — EMOJIS 3D
+============================================= -->
+<section class="bs" id="b7">
+  <div class="w">
+    <div class="bnum-tag"><span class="num">BÔNUS 7</span> de 10</div>
+    <div class="bonus-img"><img src="https://media.atomicatpages.net/u/nijnbdioznMW5Oil1vOmGJUBuue2/Pictures/KwFlbs6735555.jpeg" alt="Emojis 3D" loading="lazy"></div>
+    <div class="bpromise">Pack +140<br><span class="pk">Emojis 3D</span></div>
+    <p class="bdesc">Os emojis planos do celular já não chamam mais atenção. Os Emojis 3D do MegaPack são modernos, expressivos e criam conexão instantânea — gerando mais respostas, reações e mensagens diretas.</p>
+    <div class="bbenefs">
+      <div class="bben"><div class="bchk">✓</div><span><strong>140 emojis 3D</strong> de alta resolução</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Alto engajamento</strong> — emojis 3D geram até 3x mais reações</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Estética contemporânea</strong> que posiciona sua marca como atual</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Expressões variadas:</strong> humor, surpresa, amor, celebração e mais</span></div>
+    </div>
+    <div class="bprice">
+      <span class="bprice-old">De R$ 19,99</span>
+      <span class="bprice-free">GRÁTIS</span>
+      <span class="bprice-label">incluso no Premium</span>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+  BÔNUS 8 — MOLDURAS REPOST
+============================================= -->
+<section class="bs" id="b8">
+  <div class="w">
+    <div class="bnum-tag"><span class="num">BÔNUS 8</span> de 10</div>
+    <div class="bonus-img"><img src="https://media.atomicatpages.net/u/nijnbdioznMW5Oil1vOmGJUBuue2/Pictures/kBgCAH6809920.jpeg" alt="Molduras Repost" loading="lazy"></div>
+    <div class="bpromise">Pack +80<br><span class="gd">Molduras de Repost</span></div>
+    <p class="bdesc">Cada cliente que te menciona é uma oportunidade de ouro. Com as molduras de repost você transforma menções em prova social poderosa — fortalece relacionamento, gera autoridade e estimula ainda mais menções.</p>
+    <div class="bbenefs">
+      <div class="bben"><div class="bchk">✓</div><span><strong>80 molduras criativas</strong> para repostar depoimentos e menções</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Gera autoridade</strong> ao mostrar clientes satisfeitos publicamente</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Fortalece o rapport</strong> com sua audiência e fideliza clientes</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Estimula mais menções</strong> — quem vê quer ser repostado também</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Bônus:</strong> vídeo explicativo de aplicação incluso</span></div>
+    </div>
+    <div class="bprice">
+      <span class="bprice-old">De R$ 19,99</span>
+      <span class="bprice-free">GRÁTIS</span>
+      <span class="bprice-label">incluso no Premium</span>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+  BÔNUS 9 — FACEBOOK + INSTAGRAM ADS
+============================================= -->
+<section class="bs" id="b9">
+  <div class="w">
+    <div class="bnum-tag"><span class="num">BÔNUS 9</span> de 10</div>
+    <div class="bonus-img"><img src="https://media.atomicatpages.net/u/nijnbdioznMW5Oil1vOmGJUBuue2/Pictures/MbykuQ6841483.jpeg" alt="Facebook e Instagram Ads" loading="lazy"></div>
+    <div class="bpromise">Facebook + Instagram Ads:<br><span class="pk">Lucre 3x mais</span></div>
+    <p class="bdesc">Quer levar o conteúdo que você cria com o MegaPack para uma audiência muito maior? Esse bônus te ensina a criar anúncios lucrativos no Meta — do zero, mesmo que nunca tenha impulsionado nada antes.</p>
+    <div class="bbenefs">
+      <div class="bben"><div class="bchk">✓</div><span><strong>Crie sua primeira campanha</strong> no Meta Ads passo a passo</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Segmentação certeira</strong> para atingir o público ideal do seu nicho</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Criativos que geram cliques</strong> e transformam visualização em venda</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Escale gastando o mínimo</strong> possível com as técnicas certas</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Retorno 3x maior</strong> sobre o que você investe em anúncios</span></div>
+    </div>
+    <div class="bprice">
+      <span class="bprice-old">De R$ 99,99</span>
+      <span class="bprice-free">GRÁTIS</span>
+      <span class="bprice-label">incluso no Premium</span>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+  BÔNUS 10 — PALETAS DE SUCESSO
+============================================= -->
+<section class="bs" id="b10">
+  <div class="w">
+    <div class="bnum-tag"><span class="num">BÔNUS 10</span> de 10</div>
+    <div class="bonus-img"><img src="https://media.atomicatpages.net/u/nijnbdioznMW5Oil1vOmGJUBuue2/Pictures/YtWWrp6879333.jpeg" alt="Paletas de Sucesso" loading="lazy"></div>
+    <div class="bpromise">Paletas de Sucesso:<br><span class="gd">A cor que vende</span></div>
+    <p class="bdesc">A cor que você usa no Instagram influencia diretamente a decisão de compra. Esse guia te ensina a usar a psicologia das cores a seu favor — criando uma identidade visual que desperta desejo e confiança automaticamente.</p>
+    <div class="bbenefs">
+      <div class="bben"><div class="bchk">✓</div><span><strong>Como cada cor age</strong> na mente do seu cliente</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Paletas prontas por nicho:</strong> saúde, beleza, moda, gastronomia</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Figurinhas + cores:</strong> como combinar para máximo impacto visual</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Desperta o desejo de compra</strong> antes de você dizer uma palavra</span></div>
+      <div class="bben"><div class="bchk">✓</div><span><strong>Consistência visual</strong> que fideliza e faz o perfil ser reconhecido</span></div>
+    </div>
+    <div class="bprice">
+      <span class="bprice-old">De R$ 49,99</span>
+      <span class="bprice-free">GRÁTIS</span>
+      <span class="bprice-label">incluso no Premium</span>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE ANCHOR -->
+<div class="anchor tc">
+  <div class="w">
+    <p style="font-size:12.5px;color:var(--tx3);margin-bottom:5px">Valor total de tudo que você recebe</p>
+    <p style="font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;text-decoration:line-through;color:var(--tx3)">R$ 459,90</p>
+    <p style="font-size:13.5px;color:var(--tx2);margin:8px 0 3px">Mas hoje, por tempo limitado, você paga apenas</p>
+    <p style="font-family:'Syne',sans-serif;font-size:clamp(3rem,11vw,5rem);font-weight:800;color:var(--pk);line-height:1">
+      <sup style="font-size:32%;vertical-align:top;margin-top:12px;display:inline-block">R$</sup>15<span style="font-size:45%">,99</span>
+    </p>
+    <p style="font-size:12px;color:var(--tx3);margin-top:4px">97% de desconto · Oferta válida enquanto durar</p>
+  </div>
+</div>
+
+<!-- =============================================
+  PRICING
+============================================= -->
+<section class="pricing-s" id="pricing">
+  <div class="w">
+    <div class="tc" style="margin-bottom:24px">
+      <div class="badge" style="margin-bottom:12px">Garanta o seu acesso</div>
+      <h2>Uma decisão de R$ 15,99.<br>Um Instagram transformado.</h2>
+    </div>
+
+    <!-- Progress bar escassez -->
+    <div class="prog-wrap">
+      <div class="prog-labels">
+        <span class="l">🔥 Vagas no preço atual</span>
+        <span class="r" id="prog-label">91% preenchido</span>
+      </div>
+      <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:91%"></div></div>
+    </div>
+
+    <div class="pcard">
+      <div class="ph">
+        <div class="ph-plan">Pack Premium · Mais Vendido</div>
+        <div class="ph-from">De R$ 459,90</div>
+        <div class="ph-price"><sup>R$</sup>15<span style="font-size:35%">,99</span></div>
+        <div class="ph-save">Você economiza R$ 443,91 hoje</div>
+      </div>
+
+      <div class="pf-block">
+        <div class="pf-title">Tudo que você recebe:</div>
+        <div class="pf-list">
+          <div class="pf-item main"><span class="pfck">✓</span><span>Pack Principal: <strong>+15.000 Figurinhas Criativas</strong></span></div>
+          <div class="pf-item bonus-i"><span class="pfck pfst">★</span><span>Bônus 1 — Aplicativo com Todo o Conteúdo</span></div>
+          <div class="pf-item bonus-i"><span class="pfck pfst">★</span><span>Bônus 2 — Stories Lucrativos (mini curso)</span></div>
+          <div class="pf-item bonus-i"><span class="pfck pfst">★</span><span>Bônus 3 — Pack +6.000 Figurinhas Sofisticação</span></div>
+          <div class="pf-item bonus-i"><span class="pfck pfst">★</span><span>Bônus 4 — Pack +4.000 Figurinhas Expansão</span></div>
+          <div class="pf-item bonus-i"><span class="pfck pfst">★</span><span>Bônus 5 — Pack +450 Sombras Sofisticadas</span></div>
+          <div class="pf-item bonus-i"><span class="pfck pfst">★</span><span>Bônus 6 — Pack +900 Ícones de Destaque</span></div>
+          <div class="pf-item bonus-i"><span class="pfck pfst">★</span><span>Bônus 7 — Pack +140 Emojis 3D</span></div>
+          <div class="pf-item bonus-i"><span class="pfck pfst">★</span><span>Bônus 8 — Pack +80 Molduras Repost</span></div>
+          <div class="pf-item bonus-i"><span class="pfck pfst">★</span><span>Bônus 9 — Facebook + Instagram Ads</span></div>
+          <div class="pf-item bonus-i"><span class="pfck pfst">★</span><span>Bônus 10 — Paletas de Sucesso</span></div>
+          <div class="pf-item main" style="margin-top:4px"><span class="pfck">✓</span><span>Acesso imediato após pagamento</span></div>
+          <div class="pf-item main"><span class="pfck">✓</span><span>Acesso vitalício + atualizações mensais</span></div>
+          <div class="pf-item main"><span class="pfck">✓</span><span>7 dias de garantia incondicional</span></div>
+        </div>
+      </div>
+
+      <div class="pcta-block">
+        <div class="pcta-note">✓ Pagamento único · ✓ Sem mensalidade · ✓ Acesso vitalício</div>
+        <a href="https://pay.celetus.com/NL9KO4PG" class="cta cta-lg" style="max-width:100%">
+          🔓 LIBERAR ACESSO AGORA →
+        </a>
+        <p style="font-size:10.5px;color:var(--tx3);margin-top:9px">🔒 Pagamento seguro · Pix ou cartão · Acesso em minutos</p>
+      </div>
+    </div>
+
+    <!-- Guarantee -->
+    <div class="gblock">
+      <div class="gicon">🛡️</div>
+      <div>
+        <div class="gtitle">Garantia Incondicional de 7 Dias</div>
+        <div class="gtext">Use e teste por uma semana completa. Se por qualquer motivo você não ficar satisfeita, entre em contato e devolvemos <strong>100% do seu dinheiro</strong> — sem perguntas, sem burocracia. O risco é todo nosso.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =============================================
+  FAQ
+============================================= -->
+<section class="faq-s">
+  <div class="w">
+    <div class="tc">
+      <div class="badge" style="margin-bottom:12px">Dúvidas</div>
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <div class="faq-list">
+      <div class="fitem">
+        <button class="fq" onclick="toggleF(this)">Como e quando recebo o acesso?<span class="ftog">+</span></button>
+        <div class="fa"><div class="fa-inner">Imediatamente após a confirmação do pagamento, você recebe o link por e-mail e WhatsApp. Para Pix, o acesso é liberado em segundos. Para cartão, pode levar até 5 minutos.</div></div>
+      </div>
+      <div class="fitem">
+        <button class="fq" onclick="toggleF(this)">Precisa de Canva ou app pago?<span class="ftog">+</span></button>
+        <div class="fa"><div class="fa-inner">Não. As figurinhas são PNGs com fundo transparente prontos para usar diretamente no Instagram. Nenhum app pago necessário. Um vídeo passo a passo te ensina tudo do zero.</div></div>
+      </div>
+      <div class="fitem">
+        <button class="fq" onclick="toggleF(this)">Funciona no iPhone e Android?<span class="ftog">+</span></button>
+        <div class="fa"><div class="fa-inner">Sim, funciona perfeitamente nos dois. Você acessa pelo app exclusivo ou Google Drive, salva as figurinhas na galeria e usa no Instagram. Simples assim.</div></div>
+      </div>
+      <div class="fitem">
+        <button class="fq" onclick="toggleF(this)">Por quanto tempo tenho acesso?<span class="ftog">+</span></button>
+        <div class="fa"><div class="fa-inner">O Pack Premium dá acesso vitalício — para sempre, incluindo as novas figurinhas adicionadas todo mês, sem pagar nada a mais.</div></div>
+      </div>
+      <div class="fitem">
+        <button class="fq" onclick="toggleF(this)">E se eu não gostar? Tem reembolso?<span class="ftog">+</span></button>
+        <div class="fa"><div class="fa-inner">Sim, 7 dias de garantia incondicional. Se por qualquer motivo não gostar, entre em contato dentro desse prazo e devolvemos 100% — sem perguntas, sem complicação.</div></div>
+      </div>
+      <div class="fitem">
+        <button class="fq" onclick="toggleF(this)">O pagamento é seguro?<span class="ftog">+</span></button>
+        <div class="fa"><div class="fa-inner">100% seguro. Criptografia SSL em todo o processo. Você pode pagar via Pix ou cartão de crédito.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-s">
+  <div class="w tc">
+    <div class="badge" style="margin-bottom:14px">Última chamada</div>
+    <h2>Seus stories merecem<br>ser <span class="gtext">vistos e lembrados</span></h2>
+    <p style="color:var(--tx2);font-size:14px;margin:10px auto 26px;max-width:380px">
+      Por menos do que um almoço você transforma o visual do seu Instagram hoje. Com garantia total. Sem risco.
+    </p>
+    <a href="https://pay.celetus.com/NL9KO4PG" class="cta cta-lg" style="max-width:100%">
+      🔓 LIBERAR ACESSO AGORA →
+    </a>
+    <p style="font-size:11px;color:var(--tx3);margin-top:10px">
+      Restam <strong id="final-slots" style="color:var(--pk)">23</strong> acessos neste preço
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="flinks">
+    <a href="#">Termos de Uso</a>
+    <a href="#">Política de Privacidade</a>
+    <a href="#">Contato</a>
+  </div>
+  <div class="fcopy">
+    © 2026 MegaPack Criativo · Todos os direitos reservados<br>
+    Este site não é afiliado ao Meta Platforms, Inc.<br>
+    <span style="font-size:9.5px;opacity:.45">Pirataria é crime — Art. 184 do Código Penal.</span>
+  </div>
+</footer>
+
+<!-- STICKY BAR -->
+<div id="sticky">
+  <div class="sticky-info">
+    <div class="sticky-label">Pack Premium · Vitalício</div>
+    <div class="sticky-price">R$ 15,99</div>
+  </div>
+  <div class="sticky-cd">⏱ <span id="s-timer">15:00</span></div>
+  <a href="https://pay.celetus.com/NL9KO4PG" class="cta">LIBERAR →</a>
+</div>
+
+<script>
+/* ---- COUNTDOWN ---- */
+(function(){
+  var KEY='mp2_end', now=Date.now(), end=+localStorage.getItem(KEY);
+  if(!end||end<now){ end=now+(Math.floor(Math.random()*6)+14)*6e4; localStorage.setItem(KEY,end); }
+  function tick(){
+    var r=end-Date.now();
+    if(r<=0){ end=Date.now()+15*6e4; localStorage.setItem(KEY,end); r=15*6e4; }
+    var m=Math.floor(r/6e4), s=Math.floor((r%6e4)/1e3);
+    var str=(m<10?'0':'')+m+':'+(s<10?'0':'')+s;
+    ['timer','s-timer'].forEach(function(id){ var el=document.getElementById(id); if(el)el.textContent=str; });
+  }
+  tick(); setInterval(tick,1e3);
+})();
+
+/* ---- SCARCITY ---- */
+(function(){
+  var KEY='mp2_sl', TSK='mp2_ts', BASE=23;
+  var now=Date.now(), sl=+localStorage.getItem(KEY), ts=+localStorage.getItem(TSK);
+  if(!sl||!ts){ sl=BASE; ts=now; localStorage.setItem(KEY,sl); localStorage.setItem(TSK,ts); }
+  else{ var red=Math.floor((now-ts)/6e5); if(red>0){ sl=Math.max(3,sl-red); ts=now; localStorage.setItem(KEY,sl); localStorage.setItem(TSK,ts); } }
+  var pct=Math.min(97, Math.round(((BASE-sl)/BASE)*30+68));
+  function render(){
+    ['slots','final-slots'].forEach(function(id){ var el=document.getElementById(id); if(el)el.textContent=sl; });
+    var pl=document.getElementById('prog-label'), pf=document.getElementById('prog-fill');
+    if(pl)pl.textContent=pct+'% preenchido';
+    if(pf)pf.style.width=pct+'%';
+  }
+  render();
+  setInterval(function(){
+    sl=Math.max(3,sl-1); pct=Math.min(97,pct+1);
+    localStorage.setItem(KEY,sl);
+    render();
+  },18e4+Math.random()*12e4);
+})();
+
+/* ---- FAQ ---- */
+function toggleF(btn){
+  var it=btn.closest('.fitem'), fa=it.querySelector('.fa'), open=it.classList.contains('open');
+  document.querySelectorAll('.fitem.open').forEach(function(i){ i.classList.remove('open'); i.querySelector('.fa').style.maxHeight='0'; });
+  if(!open){ it.classList.add('open'); fa.style.maxHeight=fa.scrollHeight+'px'; }
+}
+
+/* ---- STICKY ---- */
+var st=document.getElementById('sticky');
+window.addEventListener('scroll',function(){ st.classList.toggle('show',window.scrollY>600); },{passive:true});
+
+/* ---- CAROUSEL DOTS ---- */
+(function(){
+  var cr=document.getElementById('carousel');
+  var dots=document.querySelectorAll('#cdots span');
+  if(!cr||!dots.length)return;
+  cr.addEventListener('scroll',function(){
+    var sw=cr.querySelector('.cslide');
+    if(!sw)return;
+    var idx=Math.round(cr.scrollLeft/(sw.offsetWidth+12));
+    dots.forEach(function(d,i){ d.classList.toggle('on',i===idx); });
+  },{passive:true});
+})();
+</script>
+<style>
+  .vsl-hidden { opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+  video::-webkit-media-controls-enclosure { display:none !important; }
+</style>
+
+<script src="capi_tracker.js"></script>
+
+<script>
+// VSL - Lógica de Ativação e Reinício
+(function() {
+  const container = document.getElementById('vsl-container');
+  const video = document.getElementById('vsl-video');
+  const overlay = document.getElementById('vsl-overlay');
+  const label = container.querySelector('.vplayer-label');
+
+  if (!container || !video || !overlay) return;
+
+  // Iniciar autoplay mudo (se o navegador permitir)
+  video.play().catch(e => console.log("Autoplay blocked, waiting for interaction."));
+
+  container.addEventListener('click', function() {
+    video.muted = false;
+    video.currentTime = 0; // Começar do início como solicitado
+    video.play();
+    video.controls = true; // Apresentar controles após o clique
+    overlay.classList.add('vsl-hidden'); // Ocultar o botão
+    if(label) label.classList.add('vsl-hidden');
+  });
+
+  // Bloqueio extra contra download
+  video.addEventListener('contextmenu', e => e.preventDefault());
+})();
+</script>
+
+</body>
+</html>
