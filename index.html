@@ -819,6 +819,59 @@ p  { font-size: clamp(0.95rem, 2.5vw, 1.05rem); }
   .themes-grid { grid-template-columns: repeat(2, 1fr); }
   .sticky-bar { padding: 10px 16px; }
 }
+
+/* VSL High Conversion Styles */
+.vsl-container {
+  position: relative;
+  max-width: 640px;
+  margin: 0 auto 32px;
+  background: #000;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+  border: 1px solid #222;
+  cursor: pointer;
+}
+.vsl-video {
+  width: 100%;
+  display: block;
+  z-index: 1;
+}
+.vsl-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: opacity 0.4s var(--ease);
+}
+.vsl-unmute-btn {
+  background: var(--gold);
+  color: #000;
+  border: none;
+  padding: 18px 32px;
+  border-radius: 100px;
+  font-weight: 900;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 20px 40px rgba(245, 200, 66, 0.4);
+  animation: pulseGold 2s infinite;
+  pointer-events: none;
+}
+.vsl-overlay p {
+  color: white;
+  font-weight: 700;
+  margin-top: 16px;
+  font-size: 14px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+.vsl-hidden { opacity: 0; pointer-events: none; }
 </style>
 
 <!-- Meta Tracking V4 (Engine) -->
@@ -872,10 +925,18 @@ fbq('init', '1438112951198337');
     <!-- NOTA PARA DESENVOLVEDOR: inserir aqui gif/vídeo curto
          mostrando figurinhas sendo usadas em stories reais.
          Placeholder abaixo. -->
-    <div style="background:var(--dark3);border:1px solid #2a2a2a;border-radius:16px;height:200px;display:flex;align-items:center;justify-content:center;margin:0 auto 28px;max-width:420px;">
-      <div style="text-align:center;color:var(--muted);">
-        <div style="font-size:32px;margin-bottom:8px;">▶</div>
-        <div style="font-size:13px;">[ Vídeo demonstração — inserir aqui ]</div>
+    <!-- VSL — Video Sales Letter (Integrada) -->
+    <div class="vsl-container" id="vsl-container" oncontextmenu="return false;">
+      <video id="vsl-video" class="vsl-video" autoplay muted playsinline loop controlsList="nodownload">
+        <source src="assets/video/vsl.mp4" type="video/mp4">
+        Seu navegador não suporta este vídeo.
+      </video>
+      <div id="vsl-overlay" class="vsl-overlay">
+        <button class="vsl-unmute-btn">
+          <span>🔊</span>
+          Clique para Assistir
+        </button>
+        <p>Vídeo: Como Usar o MegaPack</p>
       </div>
     </div>
 
@@ -1453,6 +1514,28 @@ window.addEventListener('scroll', () => {
     stickyBar.classList.remove('visible');
   }
 }, { passive: true });
+</script>
+
+<script>
+// VSL - Lógica de Ativação e Reinício
+(function() {
+  const container = document.getElementById('vsl-container');
+  const video = document.getElementById('vsl-video');
+  const overlay = document.getElementById('vsl-overlay');
+
+  if (!container || !video || !overlay) return;
+
+  container.addEventListener('click', function() {
+    video.muted = false;
+    video.currentTime = 0; // Começar do início como solicitado
+    video.play();
+    video.controls = true; // Apresentar controles após o clique
+    overlay.classList.add('vsl-hidden'); // Ocultar o botão
+  });
+
+  // Bloqueio extra contra download
+  video.addEventListener('contextmenu', e => e.preventDefault());
+})();
 </script>
 
 </body>
