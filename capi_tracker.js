@@ -94,14 +94,37 @@
   if (document.readyState === 'complete') trackInitialView();
   else window.addEventListener('load', trackInitialView);
 
-  // LOGICA DO FUNIL V4.2
+  const enrichUrl = (urlStr) => {
+    try {
+      const url = new URL(urlStr);
+      const fbc = getCookie('_fbc');
+      const fbp = getCookie('_fbp');
+
+      // Parâmetros universais de rastreamento para checkouts (Celetus/Kiwify/etc)
+      url.searchParams.set('external_id', window.MegaTracker.eventId);
+      if (fbc) url.searchParams.set('fbc', fbc);
+      if (fbp) url.searchParams.set('fbp', fbp);
+      
+      // Fallback: se não houver fbc, tenta pegar o fbclid da URL atual
+      if (!fbc) {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('fbclid')) url.searchParams.set('fbclid', urlParams.get('fbclid'));
+      }
+
+      return url.toString();
+    } catch (e) {
+      return urlStr;
+    }
+  };
+
+  // LOGICA DO FUNIL V4.5 (INTERCEPÇÃO SÊNIOR)
   document.addEventListener('click', (e) => {
     const anchor = e.target.closest('a');
     if (!anchor) return;
 
     const href = anchor.href;
 
-    // Detectar Checkout Real (Celetus)
+    // Detectar e Blindar Checkout (Celetus)
     if (href.includes('pay.celetus.com')) {
       let value = 15.99;
       let name = 'MegaPack Premium';
@@ -110,16 +133,20 @@
       if (href.includes('PZL2DZN8')) { value = 10.99; name = 'MegaPack Upgrade Vitalicio'; }
       if (href.includes('NL9KO4PG')) { value = 15.99; name = 'MegaPack Premium Direto'; }
 
+      // Dispara Evento Local/CAPI
       window.MegaTracker.track('InitiateCheckout', { 
         content_name: name, 
         value: value,
         currency: 'BRL'
       });
+
+      // ENRIQUECIMENTO EM TEMPO REAL: Injeta o ID no link para a Celetus usar o mesmo
+      anchor.href = enrichUrl(href);
+      console.log(`[MegaTracker] Link Blindado: ${anchor.href}`);
     } 
-    // Captura apenas navegação para a página de oferta (NÃO é InitiateCheckout ainda)
+    // Captura apenas navegação para a página de oferta
     else if (href.includes('upgrade.html')) {
-       console.log('[MegaTracker] Navegação para Oferta Detectada (R$ 5,99)');
-       // Opcional: track('ViewContent', { content_name: 'Lead interessado em 5,99' })
+       console.log('[MegaTracker] Navegação para Oferta Detectada');
     }
   });
 

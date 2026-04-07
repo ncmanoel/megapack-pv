@@ -15,9 +15,12 @@ serve(async (req) => {
     const body = await req.json();
     const { event_name, event_id, event_time, user_data, custom_data, source_url } = body;
 
-    // Detectar IP se disponível
-    const client_ip = req.headers.get('x-real-ip') || req.headers.get('x-forwarded-for')?.split(',')[0].trim();
-    if (client_ip) user_data.client_ip_address = client_ip;
+    // 1. EXTRAÇÃO SÊNIOR DE IDENTIDADE (IP E UA)
+    const client_ip = req.headers.get('x-real-ip') || req.headers.get('x-forwarded-for')?.split(',')[0].trim() || '127.0.0.1';
+    const client_ua = req.headers.get('user-agent') || user_data.client_user_agent;
+
+    user_data.client_ip_address = client_ip;
+    user_data.client_user_agent = client_ua;
 
     const eventData = {
       data: [{
