@@ -557,9 +557,70 @@ p  { font-size: clamp(0.95rem, 2.5vw, 1.05rem); }
    screenshots reais de WhatsApp/Instagram conforme forem coletados.
    Os cards de texto servem como placeholder estrutural. */
 
-/* ============================================
-   PRICING
-============================================ */
+.results-gallery {
+  background: var(--dark3); 
+  padding: 80px 0;
+  overflow: hidden;
+  border-top: 1px solid var(--br);
+  border-bottom: 1px solid var(--br);
+  position: relative;
+}
+.results-gallery::before,
+.results-gallery::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 15%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+.results-gallery::before {
+  left: 0;
+  background: linear-gradient(to right, var(--dark3), transparent);
+}
+.results-gallery::after {
+  right: 0;
+  background: linear-gradient(to left, var(--dark3), transparent);
+}
+.ticker-wrap {
+  width: 100%;
+  margin-bottom: 16px;
+}
+.ticker-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  will-change: transform;
+}
+.ticker-row-1 .ticker-track {
+  animation: marquee-ltr 60s linear infinite;
+}
+.ticker-row-2 .ticker-track {
+  animation: marquee-rtl 60s linear infinite;
+}
+.ticker-wrap:hover .ticker-track {
+  animation-play-state: paused;
+}
+.print-thumb {
+  height: 280px;
+  width: auto;
+  border-radius: 12px;
+  border: 1px solid #333;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+@keyframes marquee-ltr {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 8px)); }
+}
+@keyframes marquee-rtl {
+  0% { transform: translateX(calc(-50% - 8px)); }
+  100% { transform: translateX(0); }
+}
+@media (max-width: 480px) {
+  .results-gallery { padding: 40px 0; }
+  .print-thumb { height: 180px; }
+}
 .pricing-section { background: var(--dark); }
 .pricing-header { text-align: center; margin-bottom: 32px; }
 .pricing-cards {
@@ -1097,6 +1158,30 @@ fbq('init', '1438112951198337');
 
 
 <!-- ============================================
+  RESULTADOS REAIS (Marquee)
+============================================ -->
+<section class="results-gallery">
+  <div class="container text-center" style="margin-bottom:40px;">
+    <span class="badge badge-pink" style="margin-bottom:16px;">Resultados Reais</span>
+    <h2 class="display">Quem usa, vende mais</h2>
+    <p class="text-muted" style="max-width:500px;margin:0 auto;">Veja alguns dos milhares de feedbacks de quem já transformou o Instagram com o MegaPack.</p>
+  </div>
+
+  <div class="ticker-wrap ticker-row-1">
+    <div class="ticker-track" id="track-odd">
+      <!-- Injetado via JS -->
+    </div>
+  </div>
+
+  <div class="ticker-wrap ticker-row-2">
+    <div class="ticker-track" id="track-even">
+      <!-- Injetado via JS -->
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
   STACK DE BÔNUS (só Pack Premium)
 ============================================ -->
 <section class="section bonus-section" id="bonus">
@@ -1460,6 +1545,33 @@ function toggleFaq(btn) {
     item.classList.add('open');
     answer.style.maxHeight = answer.scrollHeight + 'px';
   }
+}
+
+// População da Galeria de Resultados (Ticker)
+const trackOdd = document.getElementById('track-odd');
+const trackEven = document.getElementById('track-even');
+
+if (trackOdd && trackEven) {
+  const exts = { 1:'jpeg', 2:'jpeg' }; // Mapeamento de exceções
+  for(let i=1; i<=60; i++) {
+    if(i === 3) continue; // Pular o que não existe
+    let ext = 'png'; 
+    if(exts[i]) ext = exts[i];
+    else if(i >= 35) ext = 'jpg';
+
+    const img = document.createElement('img');
+    img.src = `assets/prints/${i}.${ext}`;
+    img.className = 'print-thumb';
+    img.loading = 'lazy';
+    img.alt = `Resultado ${i}`;
+
+    if(i % 2 !== 0) trackOdd.appendChild(img);
+    else trackEven.appendChild(img);
+  }
+
+  // Duplicar para o loop infinito sem saltos
+  trackOdd.innerHTML += trackOdd.innerHTML;
+  trackEven.innerHTML += trackEven.innerHTML;
 }
 
 // Sticky bar: aparece após rolar 500px
