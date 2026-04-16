@@ -461,13 +461,35 @@ p  { font-size: clamp(0.95rem, 2.5vw, 1.05rem); }
   display: flex;
   gap: 16px;
   align-items: flex-start;
-  padding: 18px 20px;
-  background: var(--dark3);
-  border: 1px solid #252525;
+  padding: 24px 40px 24px 20px; /* Padding extra à direita para a faixa */
+  background: var(--dark2);
+  border: 1px solid #222222;
   border-radius: var(--radius);
-  transition: border-color 0.2s;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.2s;
 }
-.bonus-item:hover { border-color: rgba(245,200,66,0.2); }
+.bonus-item:hover { 
+  transform: translateY(-5px) scale(1.02);
+  border-color: var(--pink); 
+}
+.bonus-badge {
+  position: absolute;
+  top: 12px;
+  right: -35px;
+  background: linear-gradient(135deg, var(--pink) 0%, #ff5e95 100%);
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 5px 40px;
+  transform: rotate(45deg);
+  box-shadow: 0 4px 15px rgba(255, 45, 107, 0.3);
+  z-index: 10;
+  letter-spacing: 0.12em;
+  pointer-events: none;
+}
 .bonus-icon {
   width: 44px;
   height: 44px;
@@ -1117,6 +1139,7 @@ fbq('init', '1438112951198337');
     <div class="bonus-grid">
 
       <div class="bonus-item">
+        <div class="bonus-badge">BÔNUS 01</div>
         <div class="bonus-icon">🎨</div>
         <div class="bonus-body">
           <div class="bonus-title">Pack +450 Sombras Sofisticadas</div>
@@ -1126,6 +1149,7 @@ fbq('init', '1438112951198337');
       </div>
 
       <div class="bonus-item">
+        <div class="bonus-badge">BÔNUS 02</div>
         <div class="bonus-icon">🖼️</div>
         <div class="bonus-body">
           <div class="bonus-title">Pack +80 Molduras de Repost</div>
@@ -1135,6 +1159,7 @@ fbq('init', '1438112951198337');
       </div>
 
       <div class="bonus-item">
+        <div class="bonus-badge">BÔNUS 03</div>
         <div class="bonus-icon">🎭</div>
         <div class="bonus-body">
           <div class="bonus-title">Pack +140 Emojis 3D</div>
@@ -1144,6 +1169,7 @@ fbq('init', '1438112951198337');
       </div>
 
       <div class="bonus-item">
+        <div class="bonus-badge">BÔNUS 04</div>
         <div class="bonus-icon">🏷️</div>
         <div class="bonus-body">
           <div class="bonus-title">Pack +900 Ícones de Destaque</div>
@@ -1153,6 +1179,7 @@ fbq('init', '1438112951198337');
       </div>
 
       <div class="bonus-item">
+        <div class="bonus-badge">BÔNUS 05</div>
         <div class="bonus-icon">📱</div>
         <div class="bonus-body">
           <div class="bonus-title">Stories Lucrativos (mini curso)</div>
@@ -1162,6 +1189,7 @@ fbq('init', '1438112951198337');
       </div>
 
       <div class="bonus-item">
+        <div class="bonus-badge">BÔNUS 06</div>
         <div class="bonus-icon">🎯</div>
         <div class="bonus-body">
           <div class="bonus-title">Facebook + Instagram Ads</div>
@@ -1171,6 +1199,7 @@ fbq('init', '1438112951198337');
       </div>
 
       <div class="bonus-item">
+        <div class="bonus-badge">BÔNUS 07</div>
         <div class="bonus-icon">🎨</div>
         <div class="bonus-body">
           <div class="bonus-title">Paletas de Sucesso</div>
