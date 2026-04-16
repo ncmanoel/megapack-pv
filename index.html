@@ -112,29 +112,78 @@ p  { font-size: clamp(0.95rem, 2.5vw, 1.05rem); }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   font-family: 'DM Sans', sans-serif;
-  font-weight: 600;
+  font-weight: 700; /* Mais peso para a copy de ganho */
   font-size: 1rem;
   border: none;
   border-radius: var(--radius);
   cursor: pointer;
-  transition: transform 0.15s, opacity 0.15s;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   text-align: center;
   line-height: 1.2;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
-.btn:hover { opacity: 0.92; transform: translateY(-1px); }
-.btn:active { transform: scale(0.98); }
 
-.btn-primary {
-  background: var(--pink);
+/* Botão V3 - Volume, 3D, Brilho */
+.btn-v3 {
+  background: linear-gradient(180deg, #ff5e95 0%, var(--pink) 100%);
   color: #fff;
-  padding: 18px 32px;
-  font-size: 1.05rem;
-  border-radius: var(--radius);
-  width: 100%;
-  max-width: 420px;
-  box-shadow: 0 8px 32px rgba(232, 65, 124, 0.35);
+  padding: 20px 32px;
+  border-bottom: 4px solid #b02a5a; /* Efeito 3D */
+  box-shadow: 0 10px 25px rgba(232, 65, 124, 0.4);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.btn-v3::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 20%;
+  height: 200%;
+  background: rgba(255,255,255,0.25);
+  transform: rotate(30deg);
+  animation: btn-shine 4s infinite;
+}
+
+@keyframes btn-shine {
+  0% { left: -60%; }
+  15% { left: 120%; }
+  100% { left: 120%; }
+}
+
+.btn-v3:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 6px 0 #b02a5a,
+    0 15px 35px rgba(232, 65, 124, 0.5);
+  background: linear-gradient(180deg, #ff7ba8 0%, #ff4181 100%);
+}
+
+.btn-v3:active {
+  transform: translateY(2px);
+  border-bottom-width: 0;
+  box-shadow: 0 2px 10px rgba(232, 65, 124, 0.3);
+}
+
+/* Variante Ouro (Premium Completo) */
+.btn-gold-3d {
+  background: linear-gradient(180deg, #ffdf85 0%, var(--gold) 100%);
+  color: #000;
+  border-bottom: 4px solid #c29a2e;
+  box-shadow: 0 10px 25px rgba(245, 200, 66, 0.3);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.3);
+}
+
+.btn-gold-3d:hover {
+  background: linear-gradient(180deg, #ffe9ad 0%, #f5c842 100%);
+  box-shadow: 
+    0 6px 0 #c29a2e,
+    0 15px 35px rgba(245, 200, 66, 0.45);
 }
 .btn-primary-lg {
   padding: 22px 40px;
@@ -1004,8 +1053,8 @@ fbq('init', '1438112951198337');
     </div>
 
     <div class="hero-cta-stack">
-      <a href="#pricing" class="btn btn-primary btn-primary-lg btn-pulse btn-arrow">
-        Quero meu MegaPack agora
+      <a href="#pricing" class="btn btn-v3 btn-primary-lg btn-pulse btn-arrow">
+        Meus Stories Incríveis Agora
       </a>
       <span style="font-size:12px;color:var(--muted);">Pagamento 100% seguro · Acesso imediato</span>
     </div>
@@ -1330,8 +1379,8 @@ fbq('init', '1438112951198337');
           <li><span class="pricing-x">✗</span> Acesso expira em 3 meses</li>
         </ul>
         <div class="pricing-access">Acesso por 3 meses</div>
-        <a href="upgrade.html" class="btn btn-outline" style="display:flex;">
-          Começar com o básico
+        <a href="https://pay.celetus.com.br/W73E55" class="btn btn-outline btn-arrow" style="display:flex;">
+          Começar com o Básico
         </a>
       </div>
 
@@ -1355,8 +1404,8 @@ fbq('init', '1438112951198337');
           <li class="highlight" style="color:#4caf82;"><span class="pricing-check">✓</span> Acesso vitalício</li>
         </ul>
         <div class="pricing-access" style="color:#4caf82;">Acesso vitalício · Atualizações incluídas</div>
-        <a href="https://pay.celetus.com/NL9KO4PG" class="btn btn-primary btn-pulse btn-arrow" style="display:flex;">
-          Quero o Premium completo
+        <a href="https://pay.celetus.com.br/99R6O4" class="btn btn-v3 btn-gold-3d btn-arrow btn-pulse" style="display:flex;">
+          Quero Stories que Vendem
         </a>
       </div>
 
@@ -1524,7 +1573,7 @@ fbq('init', '1438112951198337');
     <div class="label">Pack Premium · Acesso vitalício</div>
     <div class="price">R$ 15,99</div>
   </div>
-  <a href="#pricing" class="btn btn-primary btn-arrow">Quero o pack</a>
+  <a href="#pricing" class="btn btn-v3 btn-arrow">Meus Stories Incríveis</a>
 </div>
 
 
